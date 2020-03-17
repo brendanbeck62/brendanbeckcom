@@ -11,7 +11,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 
-app.use(express.static("static"));
+app.use(express.static(__dirname + '/static'));
 app.use(favicon(__dirname + '/static/img/favicon.ico'));
 app.set('view engine', 'ejs');
 
