@@ -8,7 +8,7 @@ $(function(){
     // Define Some Elements
     var allWindow = $(window),
     body = $('body'),
-    top = allWindow.scrollTop(),
+    top = allWindow.scrollTop();
     // create variables
     var backgrounds = $('.parallax');
 
