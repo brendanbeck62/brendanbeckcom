@@ -6,8 +6,53 @@
 </head>
 
 <body>
-<p>this is the index</p>
-<img src="/img/kerchoo.png">
+<%- include ('../partials/navbar.ejs') %>
+
+  <!--HOME-->
+  <section id="home" class="home parallax one-page-section">
+      <div class="page-table">
+          <div class="table-cell text-center">
+              <div class="avatar-hero">
+                  <img src="/img/BrendanBWSquare.jpg" alt="avatar-hero">
+              </div>
+              <h1>Hi, I'm Brendan Beck</h1>
+              <a href="/documents/Brendan-Beck-Resume.pdf" class="home-resume-btn hor-center" target="_blank">Download my Resume</a>
+              
+              <!--
+              <div class="social-sidebar-group">
+                  <div class="social-sidebar-item">
+                      <a href="https://www.linkedin.com/in/brendan-beck/" target="_blank">
+                          <i class="fa fa-linkedin"></i>
+                      </a>
+                  </div>
+                  <div class="social-sidebar-item">
+                      <a href="mailto:brendan.beck62@gmail.com">
+                          <i class="fa fa-envelope"></i>
+                      </a>
+                  </div>
+                  <div class="social-sidebar-item">
+                      <a href="https://www.instagram.com/chinmusic62/" target="_blank">
+                          <i class="fa fa-instagram"></i>
+                      </a>
+                  </div>
+                  <div class="social-sidebar-item">
+                      <a href="https://twitter.com/brendanbeck62" target="_blank">
+                          <i class="fa fa-twitter"></i>
+                      </a>
+                  </div>
+                  <div class="social-sidebar-item">
+                      <a href="https://github.com/brendanbeck62?tab=repositories" target="_blank">
+                          <i class="fa fa-github"></i>
+                      </a>
+                  </div>
+              </div>
+              -->
+          </div>
+      </div>
+  </section>
+  <!--END HOME-->
+
+
 
 <%- include ('../partials/footer.ejs') %>
 </body>

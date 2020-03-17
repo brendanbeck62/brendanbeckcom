@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "nodemonConfig": {
-    "ext": "ejs, js, json"
+    "ext": "ejs, css, js, json"
   },
   "dependencies": {
     "ejs": "^3.0.1",
