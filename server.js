@@ -8,7 +8,7 @@ const favicon = require('express-favicon');
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
-// App
+// App test
 const app = express();
 
 app.use(express.static(__dirname + '/static'));
