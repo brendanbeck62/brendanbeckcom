@@ -3,78 +3,78 @@
 Navigation
 ----------------------------------------*/
 .nav-wrapper {
-	width: 100%;
-	padding: 20px 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: transparent;
-	z-index: 20;
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 20;
 }
 .nav-wrapper .navbar-toggle .icon-bar {
-	background-color: #fff;
+    background-color: #fff;
 }
 .nav-wrapper .navbar {
   position: relative;
   min-height: 50px;
 }
-.nav-wrapper .navbar-brand {
-	display: block;
-	padding-bottom: 15px;
-	padding-top: 15px;
-	font-size: 20px;
-	font-weight: 700;
-	color: #ddd;
-	float: left;
+.nav-wrapper .navbar-brand { /* left side text */
+    display: block;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    float: left;
 }
-.nav-wrapper .nav li a {
-	position: relative;
-	font-size: 13px;
-	font-weight: 700;
-	color: #ddd;
+.nav-wrapper .nav li a { /* right side text */
+    position: relative;
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
 }
 .nav-wrapper .nav li a:after {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 0;
-	height: 2px;
-	bottom: 6px;
-	left: 10%;
-	background-color: #ddd;
-	-webkit-transition: all .28s ease-in-out;
-	-o-transition: all .28s ease-in-out;
-	-moz-transition: all .28s ease-in-out;
-	transition: all .28s ease-in-out;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 6px;
+    left: 10%;
+    background-color: #ddd;
+    -webkit-transition: all .28s ease-in-out;
+    -o-transition: all .28s ease-in-out;
+    -moz-transition: all .28s ease-in-out;
+    transition: all .28s ease-in-out;
 }
 .nav-wrapper .nav>li>a:hover,
 .nav-wrapper .nav>li>a.active {
-	background-color: transparent;
+    background-color: transparent;
 }
 .nav-wrapper .nav>li>a:hover:after,
 .nav-wrapper .nav>li>a.active:after {
-	width: 80%;
+    width: 80%;
 }
 .nav-wrapper .nav>li>a:focus {
-	background-color: transparent;
+    background-color: transparent;
 }
 .nav-sticky {
-	background-color: #fff !important;
-	padding: 6px 0 !important;
-	border-bottom: 1px solid #f0f0f0;
+    background-color: #fff !important;
+    padding: 6px 0 !important;
+    border-bottom: 1px solid #000;
 }
 .nav-sticky .navbar-toggle .icon-bar {
-	background-color: #232323;
+    background-color: #232323;
 }
 .nav-sticky .navbar-brand,
 .nav-sticky .nav li a {
-	color: #232323;
+    color: #232323;
 }
 .nav-sticky .nav li a:after {
-	background-color: #3f3f3f;
+    background-color: #3f3f3f;
 }
 .nav-sticky .navbar-collapse {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
