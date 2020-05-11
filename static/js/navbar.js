@@ -16,8 +16,8 @@ $(function(){
     function stikyNav() {
 
         top = allWindow.scrollTop();
-
-        if ( top >= 100 ) {
+        console.log(top);
+        if ( top >= 10 ) {
             navBar.addClass("nav-sticky");
 
         } else {
@@ -107,4 +107,15 @@ Javascript Function For Change active Class on navigation bar
         });
 
     } // End of ChangeClass Function
+
+    
+    function scrollFunctions() {
+        stikyNav();
+        ChangeClass();
+      }
+  
+      // add Event listener to window
+      allWindow.on('scroll', function() {
+        scrollFunctions();
+      });
 });
