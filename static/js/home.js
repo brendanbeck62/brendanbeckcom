@@ -34,4 +34,9 @@ $(function(){
 
         });
     };
+
+    // add Event listener to window
+    allWindow.on('scroll', function() {
+    parallax();
+    });
 });
