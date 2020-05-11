@@ -25,7 +25,7 @@ of the /views/pages/ direcory.
 
 For example:
 
-/views/pages/software/index.ejs     has a stylesheet href="css/page.css"
+/views/pages/software/index.ejs     has a stylesheet href="css/index.css"
 
 Since express serves our static files for us it actually grabs the css from
 
