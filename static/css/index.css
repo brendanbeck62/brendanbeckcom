@@ -69,7 +69,7 @@ Home
     color: #000;
     font-size: 24px;
     padding: 8px 16px; /* sets the height and width of the button */
-    border: 2px solid #000; 
+    border: 1px solid #000; 
     cursor: pointer;
     /*border-radius: 2px;*/ /*how round the corners are */
     text-align: center;
