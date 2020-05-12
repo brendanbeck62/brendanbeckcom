@@ -116,42 +116,6 @@ img {
 
 
 /*----------------------------------------
-Mediaqueries
-----------------------------------------*/
-@media screen and (max-width: 768px) {
-
-    .nav-wrapper {
-        padding: 6px 0;
-    }
-    .nav-sticky .navbar-collapse {
-        -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
-        -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
-        box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
-    }
-    .nav-wrapper .nav li a:after {
-        display: none;
-    }
-    .avatar-hero img {
-        width: 275px;
-    }
-    .home {
-        min-height: 550px;
-    }
-    #home h1 {
-        font-size: 34px;
-    }
-    #home .typer-title {
-        font-size: 26px;
-    }
-    #home .home-resume-btn {
-        top: 90%; 
-    }
-    .home .social-sidebar-group {
-        visibility: hidden;
-    }
-}
-
-/*----------------------------------------
 keyframes animation
 ----------------------------------------*/
 

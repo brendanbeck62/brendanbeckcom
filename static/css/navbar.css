@@ -10,9 +10,10 @@ Navigation
     left: 0;
     background-color: transparent;
     z-index: 20;
+    border-bottom: 1px solid #000;
 }
 .nav-wrapper .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color: #000;
 }
 .nav-wrapper .navbar {
   position: relative;
@@ -41,7 +42,7 @@ Navigation
     height: 2px;
     bottom: 6px;
     left: 10%;
-    background-color: #ddd;
+    background-color: #000;
     -webkit-transition: all .28s ease-in-out;
     -o-transition: all .28s ease-in-out;
     -moz-transition: all .28s ease-in-out;
@@ -64,17 +65,37 @@ Navigation
     border-bottom: 1px solid #000;
 }
 .nav-sticky .navbar-toggle .icon-bar {
-    background-color: #232323;
+    background-color: #000;
 }
 .nav-sticky .navbar-brand,
 .nav-sticky .nav li a {
-    color: #232323;
+    color: #000;
 }
 .nav-sticky .nav li a:after {
-    background-color: #3f3f3f;
+    background-color: #000;
 }
 .nav-sticky .navbar-collapse {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+
+
+
+/*----------------------------------------
+Mediaqueries
+----------------------------------------*/
+@media screen and (max-width: 768px) {
+
+    .nav-wrapper {
+        padding: 6px 0;
+    }
+    .nav-sticky .navbar-collapse {
+        -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
+        -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
+        box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
+    }
+    .nav-wrapper .nav li a:after {
+        display: none;
+    }
 }

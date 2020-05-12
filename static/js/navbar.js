@@ -17,7 +17,7 @@ $(function(){
 
         top = allWindow.scrollTop();
         console.log(top);
-        if ( top >= 10 ) {
+        if ( top >= 50 ) {
             navBar.addClass("nav-sticky");
 
         } else {
