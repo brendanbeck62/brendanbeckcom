@@ -2,13 +2,17 @@
 /*----------------------------------------
 Navigation
 ----------------------------------------*/
+.container { /* default container changes widths depending on window width */
+    width: 100%;
+}
 .nav-wrapper {
     width: 100%;
     padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: #fff !important;
     z-index: 20;
     border-bottom: 1px solid #000;
 }
@@ -28,12 +32,16 @@ Navigation
     color: #000;
     float: left;
 }
-.nav-wrapper .nav li a { /* right side text */
+.nav-wrapper .navbar-right {/* right side box */
+    margin-right: -20px;
+}
+.nav-wrapper .navbar-right li a { /* right side individual */
     position: relative;
     font-size: 13px;
     font-weight: 700;
     color: #000;
 }
+
 .nav-wrapper .nav li a:after {
     content: "";
     display: block;
@@ -49,7 +57,7 @@ Navigation
     transition: all .28s ease-in-out;
 }
 .nav-wrapper .nav>li>a:hover,
-.nav-wrapper .nav>li>a.active {
+.nav-wrapper .nav>li>a.active { /* controls the current active as well as the hovered section*/
     background-color: transparent;
 }
 .nav-wrapper .nav>li>a:hover:after,

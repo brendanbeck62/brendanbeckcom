@@ -86,11 +86,14 @@ Home
     left: 10px;
     width: 40px;
     height: 40px;
-    color: #000;
+    color: #444;
     font-size: 24px;
 }
 .home .social-sidebar-item {
     margin-bottom: 25px;
+}
+.home .social-sidebar-item:hover {
+    color: #000;
 }
 
 @media screen and (max-width: 768px) {

@@ -44,3 +44,5 @@ https://crypton.trading/
 https://jsfiddle.net/hzfxp2L9/
 
 https://github.com/tameemsafi/typewriterjs
+
+https://brittanychiang.com/
