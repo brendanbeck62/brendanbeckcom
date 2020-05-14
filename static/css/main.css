@@ -13,12 +13,11 @@ body {
     color: #484848;
 }
 h1,h2,h3,h4,h5,h6 {
-    line-height: 1.75;
-    color: #333;
+    color: #000;
 }
 p {
     font-size: 16px;
-    line-height: 30px;
+    line-height: 20px;
 }
 b, strong {
     font-weight: 1000;
@@ -27,22 +26,28 @@ dfn, cite, em, i {
     font-style: italic;
 }
 h1 {
-    font-size: 36px;
+    font-size: 80px;
+    line-height: 80px;
 }
 h2 {
-    font-size: 26px;
+    font-size: 56px;
+    line-height: 80px;
 }
 h3 {
-    font-size: 24px;
+    font-size: 34px;
+    line-height: 80px;
 }
 h4 {
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 80px;
 }
 h5 {
     font-size: 18px;
+    line-height: 80px;
 }
 h6 {
     font-size: 16px;
+    line-height: 20px;
 }
 a, a:focus, a:hover, a:active {
     text-decoration: none;

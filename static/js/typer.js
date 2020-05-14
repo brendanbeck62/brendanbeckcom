@@ -4,11 +4,8 @@ var app = document.getElementById('type-text');
     });
 
     typewriter.pauseFor(2500)
-        .typeString('Hello World!')
+        .typeString('BRENDAN BECK<br>')
         .pauseFor(2500)
-        .deleteAll()
-        .typeString('Strings can be removed')
+        .typeString('I build things for the web.')
         .pauseFor(2500)
-        .deleteChars(7)
-        .typeString('altered!')
         .start();
