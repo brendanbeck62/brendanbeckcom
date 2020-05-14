@@ -73,7 +73,6 @@ Home
     cursor: pointer;
     /*border-radius: 2px;*/ /*how round the corners are */
     text-align: center;
-
 }
 .home .home-resume-btn:hover {
     background-color: #000;

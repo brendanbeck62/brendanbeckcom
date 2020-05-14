@@ -23,15 +23,16 @@ Navigation
   position: relative;
   min-height: 50px;
 }
+
 .nav-wrapper .navbar-brand { /* left side text */
     display: block;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    font-size: 20px;
-    font-weight: 700;
+    /* padding-bottom: 15px;
+    padding-top: 15px; */
+    /* font-size: 20px; */
     color: #000;
     float: left;
 }
+
 .nav-wrapper .navbar-right {/* right side box */
     margin-right: -20px;
 }
@@ -39,10 +40,22 @@ Navigation
     position: relative;
     font-size: 13px;
     font-weight: 700;
-    color: #000;
+    line-height: 1;
 }
 
-.nav-wrapper .nav li a:after {
+.navbar-resume-btn {
+    color: red !important;
+    font-size: 24px;
+    border: 1px solid red; 
+    cursor: pointer;
+}
+.navbar-resume-btn:hover {
+    color: red;
+}
+
+
+
+.nav-wrapper .nav .underlineable:after {
     content: "";
     display: block;
     position: absolute;
@@ -56,8 +69,8 @@ Navigation
     -moz-transition: all .28s ease-in-out;
     transition: all .28s ease-in-out;
 }
-.nav-wrapper .nav>li>a:hover,
-.nav-wrapper .nav>li>a.active { /* controls the current active as well as the hovered section*/
+.nav-wrapper .nav .underlineable:hover,
+.nav-wrapper .nav .underlineable .active { /* controls the current active as well as the hovered section*/
     background-color: transparent;
 }
 .nav-wrapper .nav>li>a:hover:after,
