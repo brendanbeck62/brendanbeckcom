@@ -36,12 +36,13 @@ Home
 }
 .main-landing {
     text-align: left;
-    padding-left: 10%;
+    padding-left: 20%;
     padding-right: 20%;
 }
 .main-landing>h6 {
     margin-left: 10px;
 }
+
 #type-text {
     font-size: 80px;
     color:#000;
@@ -52,16 +53,24 @@ Home
 }
 .typer-h2 {
     font-size: 50px;
+    line-height: 20px;
     color: #444;
+    margin-bottom: 10px;
 }
 
+.hide{/* used for hiding the resume btn*/
+    display:none;
+}
 
+.show{
+    display:block;
+}
 
-.home .home-resume-btn {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#resume-btn {
+    /* position: absolute;
+    transform: translate(-50%, -50%); */
+    margin-top: 30px;
+    margin-right: 50%;
     background-color: transparent;
     color: #000;
     font-size: 24px;
@@ -71,7 +80,7 @@ Home
     /*border-radius: 2px;*/ /*how round the corners are */
     text-align: center;
 }
-.home .home-resume-btn:hover {
+#resume-btn:hover {
     background-color: #000;
     color: #fff;
 }
