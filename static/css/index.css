@@ -2,37 +2,13 @@
 Home
 ----------------------------------------*/
 .home {
-    /* background-image: url(/img/chiricowallpaper.jpg); */
     background-color: #fff;
-    height: 100%;
+    height: 80%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 50px 0px;
     position: relative;
-    /* min-height: 700px; */
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover; */
-}
-/* .home:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-} */
-.avatar-hero img {
-    width: 260px;
-    margin: 0 auto;
-    /* border: solid 4px #dfdfdf;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.52);
-    -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.52);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.52); */
 }
 .main-landing {
     text-align: left;
@@ -110,13 +86,83 @@ My Work
     position: relative;
 }
 
+.project-content-group {
+    margin: 40px 0px;
+}
+
+.project-content-group .col-md-4 {
+    background-color: #ccc;
+    background-clip: content-box;
+    padding-bottom: 15px;
+}
+
 .project-content {
-    padding: 40px 0px;
+    padding: 20px;
 }
 
 
+.carousel {
+    min-height: 50%;
+    /* background-color: #000; */
+    position: relative;
+}
 
+.testimonial-carousel {
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+    margin: 20px 0px;
+    display: flex;
+}
+.testimonial-carousel .icon-container {
+    position: relative; 
+    max-width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.testimonial-carousel .icon-container span.lnr {
+    color: #dadada;
+    font-size: 1.6em;
+    cursor: pointer;
+    transition: color 0.3s linear;
+}
 
+.testimonial-carousel .icon-container span.lnr:hover {
+    color: #000;
+}
+
+.testimonial-items {
+    padding: 0px 5px;
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+.testimonial-item {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px;
+}
+.testimonial-item p.testimonial-author {
+    font-weight: bold;
+    text-align: right;
+}
+.testimonial-item.first {
+    left: 0;
+}
+.testimonial-item.second {
+    left: 100%;
+}
+.testimonial-item.third {
+    left: 200%;
+}
 
 
 @media screen and (max-width: 768px) {
