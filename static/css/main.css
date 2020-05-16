@@ -106,11 +106,9 @@ img {
     position: relative;
     display: table-cell;
     vertical-align: middle;
-    padding-top: 20px;
-    z-index: 5;
 }
-.section {
-    min-height: 500px;
+section {
+    padding: 150px 0px;
 }
 .section-title {
     color: #ddd;

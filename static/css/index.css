@@ -3,7 +3,7 @@ Home
 ----------------------------------------*/
 .home {
     /* background-image: url(/img/chiricowallpaper.jpg); */
-    background-color: rgb(255,255,255);
+    background-color: #fff;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@ Home
     -moz-background-size: cover;
     -ms-background-size: cover; */
 }
-.home:after {
+/* .home:after {
     content: "";
     position: absolute;
     width: 100%;
@@ -22,7 +22,7 @@ Home
     top: 0;
     left: 0;
     z-index: 0;
-}
+} */
 .avatar-hero img {
     width: 260px;
     margin: 0 auto;
@@ -61,20 +61,20 @@ Home
 .hide{/* used for hiding the resume btn*/
     display:none;
 }
-
-.show{
+.show{/* used for hiding the resume btn*/
     display:block;
 }
-
 #resume-btn {
-    /* position: absolute;
-    transform: translate(-50%, -50%); */
+    position: relitive;
+    display: inline-block;
+    /* transform: translate(-50%, -50%); */
+    width: 150px;
     margin-top: 30px;
-    margin-right: 50%;
     background-color: transparent;
     color: #000;
-    font-size: 24px;
-    padding: 8px 16px; /* sets the height and width of the button */
+    line-height: 14px;
+    font-size: 14px;
+    padding: 20px 28px; /* sets the height and width of the button */
     border: 1px solid #000; 
     cursor: pointer;
     /*border-radius: 2px;*/ /*how round the corners are */
@@ -100,6 +100,20 @@ Home
 .home .social-sidebar-item:hover {
     color: #000;
 }
+
+
+/*----------------------------------------
+My Work
+----------------------------------------*/
+.projects {
+    height: 50%;
+    background-color: #444;
+    position: relative;
+}
+
+
+
+
 
 
 
