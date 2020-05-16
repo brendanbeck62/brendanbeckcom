@@ -54,6 +54,7 @@ Home
     cursor: pointer;
     /*border-radius: 2px;*/ /*how round the corners are */
     text-align: center;
+    transition: color 0.3s linear, background-color 0.3s linear;
 }
 #resume-btn:hover {
     background-color: #000;
@@ -71,6 +72,7 @@ Home
 }
 .home .social-sidebar-item {
     margin-bottom: 25px;
+    transition: color 0.3s linear;
 }
 .home .social-sidebar-item:hover {
     color: #000;
@@ -90,7 +92,7 @@ My Work
     margin: 40px 0px;
 }
 
-.project-content-group .col-md-4 {
+.project-content-group .col-sm-4 {
     background-color: #ccc;
     background-clip: content-box;
     padding-bottom: 15px;
@@ -98,70 +100,6 @@ My Work
 
 .project-content {
     padding: 20px;
-}
-
-
-.carousel {
-    min-height: 50%;
-    /* background-color: #000; */
-    position: relative;
-}
-
-.testimonial-carousel {
-    overflow: hidden;
-    height: 250px;
-    position: relative;
-    margin: 20px 0px;
-    display: flex;
-}
-.testimonial-carousel .icon-container {
-    position: relative; 
-    max-width: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-.testimonial-carousel .icon-container span.lnr {
-    color: #dadada;
-    font-size: 1.6em;
-    cursor: pointer;
-    transition: color 0.3s linear;
-}
-
-.testimonial-carousel .icon-container span.lnr:hover {
-    color: #000;
-}
-
-.testimonial-items {
-    padding: 0px 5px;
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-}
-.testimonial-item {
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0px 10px;
-}
-.testimonial-item p.testimonial-author {
-    font-weight: bold;
-    text-align: right;
-}
-.testimonial-item.first {
-    left: 0;
-}
-.testimonial-item.second {
-    left: 100%;
-}
-.testimonial-item.third {
-    left: 200%;
 }
 
 

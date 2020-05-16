@@ -117,10 +117,11 @@ section {
     text-align: center;
 }
 .centered-container {
-    padding-left: 20%;
-    padding-right: 20%;
+    margin: 0 20%;
 }
-
+.half-centered-container {
+    margin: 0 10%;
+}
 
 
 .scroll-up {
