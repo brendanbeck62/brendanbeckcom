@@ -3,7 +3,7 @@ Home
 ----------------------------------------*/
 .home {
     background-color: #fff;
-    height: 80%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +54,7 @@ Home
     cursor: pointer;
     /*border-radius: 2px;*/ /*how round the corners are */
     text-align: center;
-    transition: color 0.3s linear, background-color 0.3s linear;
+    transition: color 0.3s, background-color 0.3s;
 }
 #resume-btn:hover {
     background-color: #000;
@@ -72,7 +72,7 @@ Home
 }
 .home .social-sidebar-item {
     margin-bottom: 25px;
-    transition: color 0.3s linear;
+    transition: color 0.3s;
 }
 .home .social-sidebar-item:hover {
     color: #000;
@@ -87,15 +87,17 @@ My Work
     /* background-color: #000; */
     position: relative;
 }
-
 .project-content-group {
     margin: 40px 0px;
 }
-
 .project-content-group .col-sm-4 {
     background-color: #ccc;
     background-clip: content-box;
     padding-bottom: 15px;
+    transition: transform 0.3s;
+}
+.project-content-group .col-sm-4:hover {
+    transform: translate(0px, -5px);
 }
 
 .project-content {

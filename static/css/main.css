@@ -117,12 +117,8 @@ section {
     text-align: center;
 }
 .centered-container {
-    margin: 0 20%;
+    margin: 0 100px;
 }
-.half-centered-container {
-    margin: 0 10%;
-}
-
 
 .scroll-up {
     position: fixed;
@@ -150,10 +146,17 @@ section {
     opacity: 1;
 }
 
+
+@media screen and (max-width: 768px) {
+    .centered-container {
+        margin: 0 10px;
+    }
+}
+
+
 /*----------------------------------------
 keyframes animation
 ----------------------------------------*/
-
 /* PreLoader Animations*/
 @-webkit-keyframes sk-bounce {
   0%, 100% { 
