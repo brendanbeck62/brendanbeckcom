@@ -87,7 +87,7 @@ Home
 
 .home .social-sidebar-group {
     position: absolute; /* might change to fixed so it stays there all the time */
-    top: 40%;
+    top: 30%;
     left: 25px;
     width: 40px;
     height: 40px;
