@@ -36,11 +36,10 @@ Home
 }
 .main-landing {
     text-align: left;
-    padding-left: 20%;
-    padding-right: 20%;
 }
 .main-landing>h6 {
     margin-left: 10px;
+    
 }
 
 #type-text {
@@ -65,7 +64,7 @@ Home
     display:block;
 }
 #resume-btn {
-    position: relitive;
+    position: relative;
     display: inline-block;
     /* transform: translate(-50%, -50%); */
     width: 150px;
@@ -106,12 +105,14 @@ Home
 My Work
 ----------------------------------------*/
 .projects {
-    height: 50%;
-    background-color: #444;
+    min-height: 50%;
+    /* background-color: #000; */
     position: relative;
 }
 
-
+.project-content {
+    padding: 40px 0px;
+}
 
 
 

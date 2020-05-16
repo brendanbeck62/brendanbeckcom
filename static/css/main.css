@@ -47,7 +47,8 @@ h5 {
 }
 h6 {
     font-size: 16px;
-    line-height: 10px;
+    line-height: 20px;
+    color: red;
 }
 a, a:focus, a:hover, a:active {
     text-decoration: none;
@@ -108,15 +109,45 @@ img {
     vertical-align: middle;
 }
 section {
-    padding: 150px 0px;
+    padding: 100px 0px;
 }
 .section-title {
     color: #ddd;
-    margin: 40px 0px;
+    padding: 40px 0px;
     text-align: center;
+}
+.centered-container {
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 
+
+.scroll-up {
+    position: fixed;
+    font-size: 28px;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    line-height: 38px;
+    color: #fafafa;
+    border: 2px solid #333;
+    background-color: #333;
+    bottom: 25px;
+    right: 30px;
+    opacity: 0;
+    z-index: 60;
+}
+.scroll-up:focus {
+    color: #fff;
+}
+.scroll-up:hover {
+    background-color: transparent;
+    color: #333;
+}
+.show-up-btn {
+    opacity: 1;
+}
 
 /*----------------------------------------
 keyframes animation

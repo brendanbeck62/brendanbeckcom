@@ -9,48 +9,28 @@
     margin-bottom: 6px;
     font-size: 22px;
     font-weight: 700;
+    letter-spacing: 1px;
     color: #111;
+}
+.footer-strengths {
+    font-size: 14px;
 }
 .footer-social {
     margin: 6px 0;
 }
 .footer-social-list li {
     display: inline-block;
+    margin: 0 9px;
 }
 .footer-social-list li a {
     font-size: 17px;
     color: #434343;
-    margin: 0 9px;
 }
 .footer-social-list li a:hover {
     color: #111;
 }
 .footer .copy-text {
     margin: 6px 0;
-    font-size: 15px;
+    font-size: 12px;
 }
-.scroll-up {
-    position: fixed;
-    font-size: 28px;
-    width: 46px;
-    height: 46px;
-    text-align: center;
-    line-height: 38px;
-    color: #fafafa;
-    border: 2px solid #333;
-    background-color: #333;
-    bottom: 25px;
-    right: 30px;
-    opacity: 0;
-    z-index: 60;
-}
-.scroll-up:focus {
-    color: #fff;
-}
-.scroll-up:hover {
-    background-color: transparent;
-    color: #333;
-}
-.show-up-btn {
-    opacity: 1;
-}
+
