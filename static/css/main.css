@@ -16,8 +16,9 @@ h1,h2,h3,h4,h5,h6 {
     color: #000;
 }
 p {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 20px;
+    letter-spacing: 1px;
 }
 b, strong {
     font-weight: 1000;
@@ -25,7 +26,7 @@ b, strong {
 dfn, cite, em, i {
     font-style: italic;
 }
-h1 {
+/* h1 {
     font-size: 80px;
     line-height: 80px;
 }
@@ -44,10 +45,8 @@ h4 {
 h5 {
     font-size: 18px;
     line-height: 80px;
-}
+}*/
 h6 {
-    font-size: 16px;
-    line-height: 20px;
     color: red;
 }
 a, a:focus, a:hover, a:active {
@@ -109,7 +108,7 @@ img {
     vertical-align: middle;
 }
 section {
-    margin: 150px 0px;
+    padding: 150px 0px;
 }
 .section-title {
     color: #ddd;

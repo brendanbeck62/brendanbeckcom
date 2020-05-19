@@ -63,7 +63,7 @@ Home
 
 .home .social-sidebar-group {
     position: absolute; /* might change to fixed so it stays there all the time */
-    top: 30%;
+    top: 35%;
     left: 25px;
     width: 40px;
     height: 40px;
@@ -78,9 +78,18 @@ Home
     color: #000;
 }
 
+/*----------------------------------------
+About
+----------------------------------------*/
+.about {
+    min-height: 50%;
+    /* background-color: #000; */
+    position: relative;
+}
+
 
 /*----------------------------------------
-My Work
+Projects
 ----------------------------------------*/
 .projects {
     min-height: 50%;
