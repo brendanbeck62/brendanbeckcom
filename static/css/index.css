@@ -95,6 +95,7 @@ Projects
     min-height: 50%;
     /* background-color: #000; */
     position: relative;
+    margin: 0 50px;
 }
 .project-content-group {
     margin: 40px 0px;

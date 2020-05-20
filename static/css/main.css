@@ -116,7 +116,7 @@ section {
     text-align: center;
 }
 .centered-container {
-    margin: 0 100px;
+    margin: 0 200px;
 }
 
 .scroll-up {
@@ -146,6 +146,11 @@ section {
 }
 
 
+@media screen and (max-width: 992px) {
+    .centered-container {
+        margin: 0 100px;
+    }
+}
 @media screen and (max-width: 768px) {
     .centered-container {
         margin: 0 10px;
