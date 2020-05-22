@@ -103,7 +103,6 @@
   left: 50%;
   margin-left: -21px;
   background-color: red;
-  z-index: 100;
   display: table;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

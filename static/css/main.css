@@ -16,7 +16,7 @@ h1,h2,h3,h4,h5,h6 {
     color: #000;
 }
 p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 20px;
     letter-spacing: 1px;
 }
@@ -116,7 +116,7 @@ section {
     text-align: center;
 }
 .centered-container {
-    margin: 0 200px;
+    margin: 0 15%;
 }
 
 .scroll-up {
