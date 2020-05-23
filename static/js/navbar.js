@@ -16,7 +16,6 @@ $(function(){
     function stikyNav() {
 
         top = allWindow.scrollTop();
-        console.log(top);
         if ( top >= 10 ) {
             navBar.addClass("nav-sticky");
 
