@@ -15,7 +15,7 @@ Home
 }
 .main-landing>h6 {
     margin-left: 10px;
-    
+    font-size: 16px;
 }
 
 #type-text {
@@ -62,21 +62,33 @@ Home
 }
 
 .home .social-sidebar-group {
-    position: fixed; /* might change to fixed so it stays there all the time */
-    top: 35%;
+    position: fixed;
+    top: 65%;
     left: 25px;
     width: 40px;
     height: 40px;
     color: #444;
     font-size: 24px;
 }
+.home .social-sidebar-group::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100px;
+    background-color: #aaa;
+    margin: 0px 11px;
+}
+
+
 .home .social-sidebar-item {
     margin-bottom: 25px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 .home .social-sidebar-item:hover {
-    color: #000;
+    color: red;
+    transform: translate(0px, -5px);
 }
+
 
 /*----------------------------------------
 About

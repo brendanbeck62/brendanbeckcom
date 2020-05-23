@@ -47,6 +47,7 @@ h5 {
     line-height: 80px;
 }*/
 h6 {
+    font-size: 20px;
     color: red;
 }
 a, a:focus, a:hover, a:active {
