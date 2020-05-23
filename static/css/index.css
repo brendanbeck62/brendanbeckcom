@@ -94,66 +94,7 @@ Projects
     position: relative;
 }
 
-/*----------------------------------------
-More Projects
-----------------------------------------*/
-.more-projects {
-    min-height: 50%;
-    position: relative;
-    /* margin: 0 50px; */
-}
-.more-project-card-group {
-    margin: 40px 0px;
-}
-.more-project-card-group .col-sm-4 {
-    /* background-color: #fafafa; */
-    background-clip: content-box;
-    padding: 15px 5px;
-    transition: transform 0.3s;
-}
-.more-project-card-group .col-sm-4:hover {
-    transform: translate(0px, -5px);
-}
-.more-project-card {
-    border: 1px solid #333;
-    padding: 20px;
-    min-height: 250px;
-}
-
-.card-header {
-    padding: 30px 0px;
-}
-
-.card-header > .right {
-    float:right;
-}
-.card-header > .icon {
-    padding: 0px 5px;
-    font-size: 30px;
-}
-.card-header > h6 {
-    font-size: 40px;
-}
-
-@media screen and (max-width: 768px) {
-    .home {
-        min-height: 550px;
-    }
-    #home h1 {
-        font-size: 60px;
-        line-height: 70px;
-    }
-    .home .social-sidebar-group {
-        visibility: hidden;
-    }
-}
-
-
-
-
-
 /* #region */
-
 .blurb-framed {
     padding: 15px 0;
     background-color: #fff;
@@ -264,3 +205,59 @@ More Projects
 }
 
 /* #endregion */
+
+/*----------------------------------------
+More Projects
+----------------------------------------*/
+.more-projects {
+    min-height: 50%;
+    position: relative;
+    /* margin: 0 50px; */
+}
+.more-project-card-group {
+    margin: 40px 0px;
+}
+.more-project-card-group .col-sm-6,
+.more-project-card-group .col-lg-4 {
+    /* background-color: #fafafa; */
+    background-clip: content-box;
+    padding: 5px;
+    transition: transform 0.3s;
+}
+.more-project-card-group .col-sm-6:hover,
+.more-project-card-group .col-lg-4:hover {
+    transform: translate(0px, -5px);
+}
+.more-project-card {
+    border: 1px solid #333;
+    padding: 20px;
+    min-height: 250px;
+}
+
+.more-project-card > .card-header {
+    padding: 30px 0px;
+}
+
+.more-project-card > .card-header > .right {
+    float:right;
+}
+.more-project-card > .card-header > .icon {
+    padding: 0px 5px;
+    font-size: 30px;
+}
+.more-project-card > .card-header > h6 {
+    font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        min-height: 550px;
+    }
+    #home h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .home .social-sidebar-group {
+        visibility: hidden;
+    }
+}
