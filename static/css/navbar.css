@@ -26,9 +26,7 @@ Navigation
 
 .nav-wrapper .navbar-brand { /* left side text */
     display: block;
-    /* padding-bottom: 15px;
-    padding-top: 15px; */
-    /* font-size: 20px; */
+    padding: 10px;
     color: #000;
     float: left;
 }
@@ -44,15 +42,14 @@ Navigation
 }
 
 .navbar-resume-btn {
-    color: black !important;
-    background-color: red !important;
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.3s, background-color 0.3s;
-}
-.navbar-resume-btn:hover {
     color: white !important;
     background-color: black !important;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.navbar-resume-btn:hover {
+    background-color: red !important;
 }
 
 
