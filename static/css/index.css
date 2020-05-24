@@ -64,7 +64,8 @@ Home
 
 .home .social-sidebar-group {
     position: fixed;
-    top: 65%;
+    /* top: 65%; */
+    bottom: 35%;
     left: 25px;
     width: 40px;
     height: 40px;
@@ -342,17 +343,15 @@ Projects
 .project-content-item {
     display: grid;
     align-items: center;
-    min-height:400px;
+    min-height:450px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1;
     grid-gap: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 75px;
 }
-
 .project-content-item > .half {
     position: relative;
     display: block;
-    padding: 20px;
 }
 .project-content-item > .image-unverted {
     background-color: blue;
@@ -360,31 +359,69 @@ Projects
     grid-column-start: 8;
     grid-row: 1 / -1;
     height: 100%;
-  }
+}
 .project-content-item > .text-unverted {
-    background-color: black;
     grid-column-end: -1;
     grid-column-start: 7;
     grid-row: 1 / -1;
     height: 80%;
     z-index: 1;
-  }
-
+    text-align: right;
+}
 .project-content-item > .image-inverted {
     background-color: blue;
     grid-column-end: -1;
     grid-column-start: 7;
     grid-row: 1 / -1;
     height: 100%;
-  }
+}
 .project-content-item > .text-inverted {
-    background-color: black;
+    /* border: 1px solid #000; */
     grid-column-end: 1;
     grid-column-start: 8;
     grid-row: 1 / -1;
     height: 80%;
     z-index: 1;
-  }
+}
+.project-content-item h6 {
+    font-size: 14px;
+    margin: 0px;
+}
+.project-content-item h3 {
+    margin: 0px 0px 20px 0px;
+}
+.project-content-item .desc {
+    /* border: 1px solid #000; */
+    background-color: #000;
+    width: 100%;
+    min-height: 50%;
+    align-content: center;
+    margin: 10px 0px;
+    color: white;
+    padding: 15px;
+}
+.project-content-item .techs{
+    font-size: 14px;
+}
+.project-content-item > .text-unverted .techs > li{
+    letter-spacing: .5px;
+    display: inline;
+    padding-left: 20px;
+}
+.project-content-item > .text-inverted .techs > li{
+    letter-spacing: .5px;
+    display: inline;
+    padding-right: 20px;
+}
+
+
+.project-content-item .icons{
+    padding-top: 15px;
+}
+.project-content-item .icon{
+    display: inline;
+    font-size: 25px;
+}
 /* #endregion */
 /*----------------------------------------
 More Projects
@@ -393,14 +430,12 @@ More Projects
 .more-projects {
     min-height: 50%;
     position: relative;
-    /* margin: 0 50px; */
 }
 .more-project-card-group {
     margin: 40px 0px;
 }
 .more-project-card-group .col-sm-6,
 .more-project-card-group .col-lg-4 {
-    /* background-color: #fafafa; */
     background-clip: content-box;
     padding: 5px;
 }
