@@ -388,6 +388,7 @@ Projects
     margin: 0px;
 }
 .project-content-item h3 {
+    font-size: 30px;
     margin: 0px 0px 20px 0px;
 }
 .project-content-item .desc {
@@ -421,7 +422,13 @@ Projects
 .project-content-item .icon{
     display: inline;
     font-size: 25px;
+    transition: color 0.3s;
 }
+.project-content-item .icon:hover {
+    color: red;
+}
+
+
 /* #endregion */
 /*----------------------------------------
 More Projects
@@ -459,6 +466,10 @@ More Projects
 .more-project-card > .card-header > .icon {
     padding: 0px 5px;
     font-size: 30px;
+    transition: color 0.3s;
+}
+.more-project-card > .card-header > .icon:hover {
+    color: red;
 }
 .more-project-card > .card-header > h6 {
     font-size: 40px;
