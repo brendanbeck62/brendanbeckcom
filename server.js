@@ -5,7 +5,7 @@ const url = require('url');
 const favicon = require('express-favicon');
 
 // Constants
-const PORT = 8080;
+const PORT = 80;
 const HOST = '0.0.0.0';
 
 // App test
@@ -27,4 +27,4 @@ app.get(/^(?!\/api\/)/, (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Running it on http://${HOST}:${PORT}`);
