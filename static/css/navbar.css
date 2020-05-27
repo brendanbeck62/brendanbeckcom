@@ -18,9 +18,8 @@ Navigation
 .nav-wrapper .navbar-toggle .icon-bar {
     background-color: #000;
 }
-.nav-wrapper .navbar {
-  position: relative;
-  min-height: 50px;
+.navbar {
+    margin: 0px;
 }
 
 .nav-wrapper .navbar-brand { /* left side text */
