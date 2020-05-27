@@ -11,6 +11,11 @@ Home
     margin: 50px 0px;
     position: relative;
 }
+@media screen and (max-width: 768px) {
+    .home {
+        min-height: 550px;
+    }
+}
 .main-landing {
     text-align: left;
 }
@@ -80,8 +85,6 @@ Home
     background-color: #aaa;
     margin: 0px 11px;
 }
-
-
 .home .social-sidebar-item {
     margin-bottom: 25px;
     transition: color 0.3s, transform 0.3s;
@@ -89,6 +92,11 @@ Home
 .home .social-sidebar-item:hover {
     color: red;
     transform: translate(0px, -5px);
+}
+@media screen and (max-width: 768px) {
+    .home .social-sidebar-group {
+        visibility: hidden;
+    }
 }
 /* #endregion */
 /*----------------------------------------
@@ -473,22 +481,5 @@ More Projects
 }
 .more-project-card > .card-header > h6 {
     font-size: 40px;
-}
-/* #endregion */
-/*----------------------------------------
-Max Screen
-----------------------------------------*/
-/* #region */
-@media screen and (max-width: 768px) {
-    .home {
-        min-height: 550px;
-    }
-    #home h1 {
-        font-size: 60px;
-        line-height: 70px;
-    }
-    .home .social-sidebar-group {
-        visibility: hidden;
-    }
 }
 /* #endregion */
