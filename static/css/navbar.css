@@ -24,7 +24,8 @@ Navigation
 
 .nav-wrapper .navbar-brand { /* left side text */
     display: block;
-    padding: 10px;
+    margin-left: 0px !important;
+    padding: 5px;
     color: #000;
     float: left;
     transition: color 0.3s;
