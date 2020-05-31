@@ -27,6 +27,11 @@ Navigation
     padding: 10px;
     color: #000;
     float: left;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: red !important;
 }
 
 .nav-wrapper .navbar-right {/* right side box */
