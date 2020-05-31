@@ -54,7 +54,7 @@ Home
     background-color: transparent;
     color: #000;
     line-height: 14px;
-    font-size: 14px;
+    font-size: 16px;
     padding: 20px 28px; /* sets the height and width of the button */
     border: 1px solid #000;
     cursor: pointer;
@@ -106,6 +106,16 @@ About
 .about {
     min-height: 50%;
     position: relative;
+}
+
+.about .tech-title {
+  font-size: 16px;
+}
+.about .tech-content {
+  padding-left: 10px;
+}
+.about ul.tech-list {
+  list-style: circle;
 }
 /* #endregion */
 /*----------------------------------------
