@@ -1,5 +1,5 @@
 // shows the landing resume button
-window.onload=function() { //executes when the page finishes loading 
+window.onload=function() { //executes when the page finishes loading
     setTimeout(showBtn, 8000);
 };
 function showBtn() {
@@ -16,5 +16,5 @@ typewriter
   .deleteChars(2)
   .typeString('AN BECK</span><br>')
   .pauseFor(500)
-  .typeString('<span class="typer-h2">I make stuff look good.</span>')
+  .typeString('<span class="typer-h2">I write code the right way.</span>')
   .start();
