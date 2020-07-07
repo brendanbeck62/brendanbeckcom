@@ -39,6 +39,8 @@ in the /views/partials/ directory
 
 
 ## Dev Resources
+deploying site on AWS - https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server
+
 https://crypton.trading/
 
 https://jsfiddle.net/hzfxp2L9/
