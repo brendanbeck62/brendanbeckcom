@@ -36,9 +36,14 @@ as you continue this directory structure of placing static files in /static
 directory and the html in the views/pages/ directory and the reusable html
 in the /views/partials/ directory
 
+## Server Setup
 
+deploying site on AWS - https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server
+
+use forever to keep the node server running even after restarts. - https://github.com/foreversd/forever
 
 ## Dev Resources
+
 https://crypton.trading/
 
 https://jsfiddle.net/hzfxp2L9/
