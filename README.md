@@ -42,6 +42,8 @@ deploying site on AWS - https://ourcodeworld.com/articles/read/977/how-to-deploy
 
 https://pm2.keymetrics.io/docs/usage/startup/#generating-a-startup-script
 
+https://pm2.keymetrics.io/docs/usage/specifics/
+
 ## Dev Resources
 
 https://crypton.trading/
