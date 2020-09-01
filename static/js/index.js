@@ -6,6 +6,21 @@ function showBtn() {
     document.getElementById("resume-btn").className="show";
 }
 
+// Work experience and edu collapsibles
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("timeline-active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
 
 // Typer
 var app = document.getElementById('type-text');

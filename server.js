@@ -5,7 +5,7 @@ const url = require('url');
 const favicon = require('express-favicon');
 
 // Constants
-const PORT = 80;
+const PORT = 8080;
 const HOST = '0.0.0.0';
 
 // App test
