@@ -7,13 +7,14 @@
 .footer-title {
     display: inline-block;
     margin-bottom: 6px;
-    font-size: 22px;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: #111;
 }
 .footer-strengths {
-    font-size: 14px;
+    font-size: .9rem;
+    letter-spacing: 2px;
 }
 .footer-social {
     margin: 6px 0;
@@ -23,7 +24,7 @@
     margin: 0 9px;
 }
 .footer-social-list li a {
-    font-size: 17px;
+    font-size: 1rem;
     color: #434343;
 }
 .footer-social-list li a:hover {
@@ -31,6 +32,5 @@
 }
 .footer .copy-text {
     margin: 6px 0;
-    font-size: 12px;
+    font-size: .75rem;
 }
-
