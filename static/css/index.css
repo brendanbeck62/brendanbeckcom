@@ -502,6 +502,9 @@ More Projects
     color: red;
 }
 .more-project-card > .card-header > h6 {
-    font-size: 4rem;
+    font-size: 2.5rem;
+}
+.more-project-card > .card-content > h6 {
+    font-size: 2.5rem;
 }
 /* #endregion */
