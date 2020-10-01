@@ -66,11 +66,16 @@ Navigation
     height: 2px;
     bottom: 6px;
     left: 10%;
-    background-color: #000;
+    background-color: black;
     -webkit-transition: all .28s ease-in-out;
     -o-transition: all .28s ease-in-out;
     -moz-transition: all .28s ease-in-out;
     transition: all .28s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+    .nav-wrapper .nav .underlineable:after {
+        background-color: transparent;
+    }
 }
 .nav-wrapper .nav .underlineable:hover,
 .nav-wrapper .nav .underlineable .active { /* controls the current active as well as the hovered section*/
@@ -80,6 +85,8 @@ Navigation
 .nav-wrapper .nav>li>a.active:after {
     width: 80%;
 }
+
+
 .nav-wrapper .nav>li>a:focus {
     background-color: transparent;
 }
