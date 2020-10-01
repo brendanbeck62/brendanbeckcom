@@ -94,11 +94,7 @@ Home
   color: red;
   transform: translate(0px, -5px);
 }
-@media screen and (max-width: 768px) {
-  .home .social-sidebar-group {
-    visibility: hidden;
-  }
-}
+
 
 .icon-scroll,
 .icon-scroll:before {
@@ -137,6 +133,15 @@ Home
   100% {
     opacity: 0;
     transform: translateY(15px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home .social-sidebar-group {
+    visibility: hidden;
+  }
+  .home .icon-scroll {
+    visibility: hidden;
   }
 }
 
