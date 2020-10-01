@@ -16,6 +16,13 @@
     font-size: 1.25rem;
     letter-spacing: 2px;
 }
+
+@media screen and (max-width: 768px) {
+    .footer-strengths {
+        visibility: hidden;
+    }
+}
+
 .footer-social {
     margin: 6px 0;
 }
