@@ -28,11 +28,12 @@ Navigation
     padding: 5px;
     color: #000;
     float: left;
-    transition: color 0.3s;
+    transition-property: -webkit-filter 0.3s;
 }
 
 .navbar-brand:hover {
-    color: red !important;
+    /* makes it red */
+    filter: invert(31%) sepia(97%) saturate(7493%) hue-rotate(1deg) brightness(95%) contrast(125%);
 }
 
 .nav-wrapper .navbar-right {/* right side box */
