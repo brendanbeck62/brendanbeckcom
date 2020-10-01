@@ -541,7 +541,7 @@ More Projects
 }
 .more-project-card > .card-header > .icon {
     padding: 0px 5px;
-    font-size: 2rem;
+    font-size: 3rem;
     transition: color 0.3s;
 }
 .more-project-card > .card-header > .icon:hover {
