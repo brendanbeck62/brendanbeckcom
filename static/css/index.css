@@ -215,7 +215,6 @@ Resume
 .timeline .timeline-heading > div h3 {
   display: inline-block;
   padding: 7px 15px;
-  font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: bold;
@@ -343,9 +342,9 @@ Resume
 .time-period {
   display: block;
   margin-bottom: 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: normal;
-  color: #bfbfbf;
+  color: #777;
 }
 
 .timeline-body > p,
@@ -368,7 +367,7 @@ li.timeline-inverted > .timeline-panel > .timeline-body > p::before {
 } */
 
 .timeline-body > p + p {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 @media (max-width: 992px) {
