@@ -77,7 +77,7 @@ $(function () {
                     var item = $(this);
                     item.find("a").removeClass("active");
                 });
-                navList.find('li [href="#' + section.attr('id') + '"]').addClass('active');
+                navList.find('li [href="/#' + section.attr('id') + '"]').addClass('active');
             }
         });
     } // End of ChangeClass Function
