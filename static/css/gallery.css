@@ -1,7 +1,8 @@
 /* #region portfolio */
-.portfolio-item {
+
+/* .portfolio-item {
   overflow: hidden;
-}
+} */
 
 .portfolio-item img {
   -webkit-transition: .3s all ease;
@@ -19,13 +20,13 @@
   transform: scale(1.09);
 }
 
-.portfolio-item, .blog-item {
+.portfolio-item {
   display: block;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 
-.portfolio-item .overlay, .blog-item .overlay {
+.portfolio-item .overlay {
   position: relative;
   z-index: 8;
   opacity: 0;
@@ -35,7 +36,7 @@
   transition: .3s all ease;
 }
 
-.portfolio-item .overlay, .portfolio-item .overlay:before, .blog-item .overlay, .blog-item .overlay:before {
+.portfolio-item .overlay, .portfolio-item .overlay:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -43,58 +44,35 @@
   bottom: 0;
 }
 
-.portfolio-item .overlay:before, .blog-item .overlay:before {
-  background: rgba(0, 0, 0, 0.5);
+/* TODO figure out how to make black and white with red hover here */
+.portfolio-item .overlay:before {
+  background: rgba(0,0,0, 0.5);
   content: "";
 }
 
-.portfolio-item .wrap-icon, .blog-item .wrap-icon {
+.portfolio-item .wrap-icon {
   position: absolute;
   right: 20px;
   color: #fff;
   top: 20px;
 }
 
-.portfolio-item .portfolio-item-content, .blog-item .portfolio-item-content {
+.portfolio-item .portfolio-item-content {
   position: absolute;
   bottom: 20px;
   left: 20px;
   right: 20px;
 }
 
-.portfolio-item .portfolio-item-content h3, .portfolio-item .portfolio-item-content p, .blog-item .portfolio-item-content h3, .blog-item .portfolio-item-content p {
+.portfolio-item .portfolio-item-content h3, .portfolio-item .portfolio-item-content p {
   color: #fff;
   margin: 0;
   padding: 0;
 }
 
-.portfolio-item .portfolio-item-content h3, .blog-item .portfolio-item-content h3 {
-  font-size: 18px;
-}
-
-.portfolio-item .portfolio-item-content p, .blog-item .portfolio-item-content p {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Arimo", sans-serif;
-}
-
-.portfolio-item:hover .overlay, .blog-item:hover .overlay {
+.portfolio-item:hover .overlay {
   opacity: 1;
   visibility: visible;
-}
-
-.blog-item {
-  margin-left: 0 !important;
-}
-
-.blog-item .overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-.blog-item:hover .overlay {
-  opacity: 0;
-  visibility: hidden;
 }
 
 .filter-wrap {
@@ -158,15 +136,13 @@
   }
 }
 
-.gutter-isotope-item > .col,
-.gutter-isotope-item > [class*="col-"] {
+.gutter-isotope-item>.col, .gutter-isotope-item>[class*="col-"] {
   padding-right: 15px !important;
   padding-left: 15px !important;
 }
 
 @media (max-width: 991.98px) {
-  .gutter-isotope-item > .col,
-  .gutter-isotope-item > [class*="col-"] {
+  .gutter-isotope-item>.col, .gutter-isotope-item>[class*="col-"] {
     padding-right: 15px !important;
     padding-left: 15px !important;
   }
@@ -176,10 +152,10 @@
   margin-bottom: 30px !important;
 }
 
-
 /* #endregion */
 
 /* #region GSAP STUFF */
+
 .gsap-reveal {
   position: relative;
   display: inline-block;
