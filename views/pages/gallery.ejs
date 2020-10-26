@@ -24,21 +24,25 @@
   <section id="gallery" class="gallery section">
     <div class="centered-container">
       <div class="portfolio-wrapper">
-        <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
-          <h2 class="mr-auto"><span class="gsap-reveal">Portfolio</span></h2>
-        <!-- TODO: the "filter" should only appear when folded idk where that code went -->
-        <!--
-          <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
+
+        <div class="intro">
+          <h2 class="section-title">
+            <span class="gsap-reveal">Portfolio</span>
+          </h2>
+          <a href="#" class="js-filter hidden-md hidden-lg">
+            <span class="gsap-reveal gsap-reveal-filter">Filter</span>
+          </a>
+
           <div class="filter-wrap">
             <div class="filter ml-auto" id="filters">
               <a href="#" class="active" data-filter="*">All</a>
-              <a href="#" data-filter=".web">Web</a>
-              <a href="#" data-filter=".branding">Branding</a>
-              <a href="#" data-filter=".illustration">Illustration</a>
-              <a href="#" data-filter=".packaging">Packaging</a>
+              <a href="#" data-filter=".graphic">GRAPHIC</a>
+              <a href="#" data-filter=".wallpaper">WALLPAPER</a>
+              <a href="#" data-filter=".character">CHARACTER</a>
+              <a href="#" data-filter=".photoshop">PHOTOSHOP</a>
+              <a href="#" data-filter=".illustrator">ILLUSTRATOR</a>
             </div>
           </div>
-         -->
         </div>
 
         <div id="posts" class="row">
@@ -59,7 +63,7 @@
 
           <!-- linked in bannner -->
           <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/linkedin_banner.png" class="portfolio-item gsap-reveal-img" target="_blank">
+            <a href="img/gallery/linkedin_banner.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
               <div class="overlay">
                 <span class="wrap-icon icon-photo2"></span>
                 <div class="portfolio-item-content">
@@ -67,7 +71,7 @@
                   <p>Photoshop, Graphic</p>
                 </div>
               </div>
-              <img src="img/gallery/linkedin_banner.png" class="lazyload img-fluid" alt="Images" />
+              <img src="img/gallery/linkedin_banner.jpg" class="lazyload img-fluid" alt="Images" />
             </a>
           </div>
 
