@@ -109,7 +109,7 @@ var animateReveal = function () {
             var tl = new TimelineMax();
             setTimeout(function () {
                 tl
-                    .fromTo(cover, 2, { skewX: 0 }, { xPercent: 101, transformOrigin: "0% 100%", ease: Expo.easeInOut })
+                    .fromTo(cover, 2, { skewX: 0 }, { xPercent: 103, transformOrigin: "0% 100%", ease: Expo.easeInOut })
             }, revealNum * 0);
             var scene = new ScrollMagic.Scene({
                 triggerElement: this,
