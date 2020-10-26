@@ -1,23 +1,7 @@
 /* #region portfolio */
 
-/* .portfolio-item {
-  overflow: hidden;
-} */
-
-.portfolio-item img {
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
-  position: relative;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.portfolio-item:hover img {
-  -webkit-transform: scale(1.09);
-  -ms-transform: scale(1.09);
-  transform: scale(1.09);
+#posts .item {
+  padding-bottom: 15px;
 }
 
 .portfolio-item {
@@ -49,6 +33,23 @@
   background: rgba(0,0,0, 0.5);
   content: "";
 }
+
+.portfolio-item img {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  position: relative;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+/*
+.portfolio-item:hover img {
+  -webkit-transform: scale(1.09);
+  -ms-transform: scale(1.09);
+  transform: scale(1.09);
+} */
+
 
 .portfolio-item .wrap-icon {
   position: absolute;
@@ -160,12 +161,6 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-}
-
-@media (max-width: 991.98px) {
-  .gsap-reveal.gsap-reveal-filter {
-    overflow: visible !important;
-  }
 }
 
 .gsap-reveal .cover {
