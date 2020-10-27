@@ -109,8 +109,8 @@ Navigation
 .nav-wrapper .navbar-right li a {
     /* right side individual */
     position: relative;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 14px;
+    color: black;
     line-height: 1;
 }
 
