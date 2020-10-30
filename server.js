@@ -3,6 +3,7 @@
 const express = require('express');
 const url = require('url');
 const favicon = require('express-favicon');
+const fs = require('fs');
 
 // Constants
 const PORT = 80;
@@ -30,7 +31,24 @@ app.get(/^(?!\/api\/)/, (req, res) => {
     if ((pathname)[pathname.length - 1] === '/') {
         pathname += 'index';
     }
-    res.render(pathname, purl.query);
+
+    // add the path + extension, so that the fs.access can find it
+    var pathPrepend = "./views/";
+    var extenstion = ".ejs"
+    var fullpath = pathPrepend.concat(pathname).concat(extenstion);
+
+    // check if the file exists in the pages directory
+    fs.access(fullpath, fs.F_OK, (err) => {
+        // if it does not exist, display the 404 page
+        if (err) {
+            res.render("pages/404", purl.query);
+            return
+        }
+
+        // otherwise display the page
+        res.render(pathname, purl.query);
+      })
+
 });
 
 app.listen(PORT, HOST);
