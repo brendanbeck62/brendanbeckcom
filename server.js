@@ -16,7 +16,6 @@ app.use(express.static(__dirname + '/static/'));
 app.use(favicon(__dirname + '/static/img/favicon.ico'));
 app.set('view engine', 'ejs');
 
-
 // Download for the VSCode synthwave theme...
 // TODO remove this when full page is made for it
 app.get('/synthwave-theme', (req, res) => {
