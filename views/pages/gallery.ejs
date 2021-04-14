@@ -1,167 +1,185 @@
 <html>
+
 <head>
   <title>Gallery | Brendan Beck</title>
 
   <%- include ('../partials/includes.ejs') %>
 
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" type="text/css" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/gallery.css" />
 </head>
 
 <body>
   <%- include ('../partials/navbar.ejs') %>
 
-  <section id="gallery" class="gallery section">
-    <div class="centered-container">
-      <div class="portfolio-wrapper">
-        <div class="intro">
-          <h2 class="title">
-            <span class="gsap-reveal">Gallery</span>
-          </h2>
-          <a href="#" class="js-filter hidden-md hidden-lg">
-            <span class="gsap-reveal">Filter</span>
-          </a>
+    <section id="gallery" class="gallery section">
+      <div class="centered-container">
+        <div class="portfolio-wrapper">
+          <div class="intro">
+            <h2 class="title">
+              <span class="gsap-reveal">Gallery</span>
+            </h2>
+            <a href="#" class="js-filter hidden-md hidden-lg">
+              <span class="gsap-reveal">Filter</span>
+            </a>
 
-          <div class="filter-wrap">
-            <div class="filter gsap-reveal" id="filters">
-              <a href="#" class="active" data-filter="*">All</a>
-              <a href="#" data-filter=".graphic">GRAPHIC</a>
-              <a href="#" data-filter=".wallpaper">WALLPAPER</a>
-              <a href="#" data-filter=".character">CHARACTER</a>
-              <a href="#" data-filter=".photoshop">PHOTOSHOP</a>
-              <a href="#" data-filter=".illustrator">ILLUSTRATOR</a>
+            <div class="filter-wrap">
+              <div class="filter gsap-reveal" id="filters">
+                <a href="#" class="active" data-filter="*">All</a>
+                <a href="#" data-filter=".graphic">GRAPHIC</a>
+                <a href="#" data-filter=".wallpaper">WALLPAPER</a>
+                <a href="#" data-filter=".character">CHARACTER</a>
+                <a href="#" data-filter=".photoshop">PHOTOSHOP</a>
+                <a href="#" data-filter=".illustrator">ILLUSTRATOR</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="posts" class="row">
+          <div id="posts" class="row">
 
-          <!-- buisness cards -->
-          <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/business_card_mockup.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Business Cards</h3>
-                  <p>Photoshop, Graphic</p>
+            <!-- buisness cards -->
+            <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/business_card_mockup.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Business Cards</h3>
+                    <p>Photoshop, Graphic</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/business_card_mockup.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/business_card_mockup.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- linked in bannner -->
-          <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/linkedin_banner.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Linkedin Banner</h3>
-                  <p>Photoshop, Graphic</p>
+            <!-- linked in bannner -->
+            <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/linkedin_banner.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Linkedin Banner</h3>
+                    <p>Photoshop, Graphic</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/linkedin_banner.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/linkedin_banner.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- little spaceman -->
-          <div class="item photoshop character col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/little_spaceman.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Little Spaceman</h3>
-                  <p>Photoshop, Character</p>
+            <!-- utopia merch -->
+            <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/utopiamerch.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Utopia Merch</h3>
+                    <p>Photoshop, Graphic</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/little_spaceman.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/utopiamerch.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- glass planet -->
-          <div class="item illustrator wallpaper col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/glass_planet_vector.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Glass Planet</h3>
-                  <p>Illustrator</p>
+            <!-- skellyflowers -->
+            <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/skellyflowers.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Grunge Skeleton Graphic</h3>
+                    <p>Photoshop, Graphic</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/glass_planet_vector.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/skellyflowers.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- mac miller graphic -->
-          <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/macmiller_graphic.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Mac Miller Graphic</h3>
-                  <p>Photoshop, Graphic</p>
+            <!-- mac miller graphic -->
+            <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/macmiller_graphic.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Mac Miller Graphic</h3>
+                    <p>Photoshop, Graphic</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/macmiller_graphic.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/macmiller_graphic.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- joker glitch -->
-          <div class="item photoshop col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/joker_glitch.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Glitched Joker</h3>
-                  <p>Photoshop</p>
+            <!-- text revlove graphic -->
+            <div class="item photoshop wallpaper col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/text-revolve-instastory.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Text Relove Statue Wallpaper</h3>
+                    <p>Photoshop, Wallpaper</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/joker_glitch.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/text-revolve-instastory.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- cutup statue -->
-          <div class="item photoshop wallpaper col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/cutup_statue.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Cutup Statue</h3>
-                  <p>Photoshop, Wallpaper</p>
+            <!-- tyler golf graphic -->
+            <div class="item photoshop graphic col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/tylergolf.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Tyler the Creator Poster</h3>
+                    <p>Photoshop, Graphic</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/cutup_statue.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
+                <img src="img/gallery/tylergolf.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
 
-          <!-- kids see ghosts -->
-          <div class="item photoshop wallpaper col-sm-6 col-md-6 col-lg-4">
-            <a href="img/gallery/kids_see_ghosts.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-photo2"></span>
-                <div class="portfolio-item-content">
-                  <h3>Kids See Ghosts</h3>
-                  <p>Photoshop, Wallpaper</p>
+            <!-- joker glitch -->
+            <div class="item photoshop col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/joker_glitch.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Glitched Joker</h3>
+                    <p>Photoshop</p>
+                  </div>
                 </div>
-              </div>
-              <img src="img/gallery/kids_see_ghosts.jpg" class="lazyload img-fluid" alt="Images" />
-            </a>
+                <img src="img/gallery/joker_glitch.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
+
+            <!-- cutup statue -->
+            <div class="item photoshop wallpaper col-sm-6 col-md-6 col-lg-4">
+              <a href="img/gallery/cutup_statue.jpg" class="portfolio-item gsap-reveal-img" target="_blank">
+                <div class="overlay">
+                  <span class="wrap-icon icon-photo2"></span>
+                  <div class="portfolio-item-content">
+                    <h3>Cutup Statue</h3>
+                    <p>Photoshop, Wallpaper</p>
+                  </div>
+                </div>
+                <img src="img/gallery/cutup_statue.jpg" class="lazyload img-fluid" alt="Images" />
+              </a>
+            </div>
+
+
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <%- include ('../partials/footer.ejs') %>
-  <%- include ('../partials/includesjs.ejs') %>
+    <%- include ('../partials/footer.ejs') %>
+      <%- include ('../partials/includesjs.ejs') %>
 
-  <!-- Loader -->
-  <div id="site-loader-overlayer"></div>
-  <div class="site-loader-wrap">
-    <div class="site-loader"></div>
-  </div>
+        <!-- Loader -->
+        <div id="site-loader-overlayer"></div>
+        <div class="site-loader-wrap">
+          <div class="site-loader"></div>
+        </div>
 
-  <script src="js/gallery-scripts-dist.js"></script>
-  <script src="js/gallery.js"></script>
+        <script src="js/gallery-scripts-dist.js"></script>
+        <script src="js/gallery.js"></script>
 </body>
+
 </html>
