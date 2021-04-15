@@ -7,6 +7,11 @@ jQuery(function ($) {
     animateReveal();
 });
 
+// for the ekko-lightbox
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
 
 // isotope anumations
 var siteIstotope = function () {
