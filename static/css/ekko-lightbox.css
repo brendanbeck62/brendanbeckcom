@@ -160,4 +160,6 @@
 .modal-backdrop
 {
   opacity: .5 !important;
+  -webkit-transition: opacity .15s linear !important;
+  transition: opacity .15s linear !important;
 }
