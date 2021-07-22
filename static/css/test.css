@@ -23,6 +23,7 @@ body {
 }
 
 .card {
+  margin: auto;
   padding: 20px;
   background: var(--card-bg);
   box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, .3);
@@ -31,6 +32,7 @@ body {
 }
 
 .another-card {
+  margin: auto;
   padding: 20px;
   background: red;
   box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, .3);
