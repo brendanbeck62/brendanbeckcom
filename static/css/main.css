@@ -13,15 +13,6 @@
   --hover-text-color: #252525;
 }
 
-body {
-  margin: 0;
-  background: var(--body-bg);
-  /* align-items: center;
-  justify-content: center; */
-  height: 100vh;
-  transition: background-color .5s;
-}
-
 html, body {
   height: 100%;
 }
@@ -39,6 +30,8 @@ body {
 }
 p,h1,h2,h3,h4,h5,h6 {
   color: var(--text-color);
+  transition: color .5s;
+
 }
 p {
   font-size: 1.5rem;

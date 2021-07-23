@@ -26,6 +26,7 @@ Home
 }
 .main-landing>h2 {
   color: var(--secondary-text-color);
+  transition: color .5s;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -57,11 +58,13 @@ Home
   border: 1px solid var(--text-color);
   cursor: pointer;
   text-align: center;
-  transition: color 0.3s, background-color 0.3s;
+  transition: color .5s, background-color .5s, border .5s;
 }
 #resume-btn:hover {
   background-color: var(--text-color);
   color: var(--hover-text-color);
+  transition: color .5s, background-color .5s, border .5s;
+
 }
 
 
@@ -73,14 +76,16 @@ Home
   width: 40px;
   height: 40px;
   color: var(--secondary-text-color);
+  transition: color .5s;
   font-size: 2.25rem;
 }
-.home .social-sidebar-group::after {
+.home .social-sidebar-group::after { /* handles the line under */
   content: "";
   display: block;
   width: 1px;
   height: 100px;
   background-color: var(--secondary-text-color);
+  transition: background-color .5s;
   margin: 0px 11px;
 }
 .home .social-sidebar-item {
@@ -107,7 +112,7 @@ Home
   box-shadow: inset 0 0 0 1px var(--text-color);
   border-radius: 25px;
   opacity: 1;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s, box-shadow .5s;
 }
 .icon-scroll:hover {
   background-color: var(--hover-text-color);
@@ -540,8 +545,8 @@ More Projects
 .more-project-card > .card-header > .icon {
     padding: 0px 5px;
     font-size: 3rem;
-    transition: color 0.3s;
     color: var(--text-color);
+    transition: color 0.5s;
 }
 .more-project-card > .card-header > .icon:hover {
     color: red;
