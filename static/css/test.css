@@ -65,31 +65,30 @@ h2 {
   width: fit-content;
   height: fit-content;
 }
-
-.moon{
+.sun{
   position: absolute;
   inset: 0;
 }
 
-.moon-logo{
+.sun-logo{
   opacity: 0;
   transform: translateY(20%) rotateZ(50deg);
   transition: all .5s ease-out;
 }
-.sun-logo{
+.moon-logo{
   opacity: 1;
   transform: translateY(0) rotateZ(0deg);
   transition: all .5s ease-out;
   color: black;
 }
 
-.animate-sun{
+.animate-moon{
   opacity: 0;
   transform: translateY(20%) rotateZ(100deg);
   color: aliceblue;
 }
 
-.animate-moon{
+.animate-sun{
   opacity: 1;
   transform: translateY(0%) rotateZ(0deg);
   color: aliceblue;
