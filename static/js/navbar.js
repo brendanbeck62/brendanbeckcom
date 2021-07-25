@@ -64,20 +64,30 @@ $(function () {
         navList = navBar.find("ul.navbar-nav");
 
     // Define ChangeClass Function
-    function ChangeClass() {
+    function ChangeClass(isOnLoad = false) {
+        // console.log(window.location.pathname);
         top = allWindow.scrollTop();
         $.each(sections, function (i, val) {
             var section = $(this),
                 section_top = section.offset().top,
                 bottom = section_top + section.height();
 
-            if (top >= section_top && top <= bottom) {
+            // the if handles all other pages that are rendered in the navbar...
+            // If there is a page that is not linked in the navbar, nothing will happen
+            // (because there is no else clause, otherwise it would be caught by that)
+            if (window.location.pathname !== '/') {
+                navList.find('li [href="' + window.location.pathname + '"]').addClass('active');
+            }
+            else if (top >= section_top && top <= bottom) {
                 var naItems = navList.find('li');
                 $.each(naItems, function (i, val) {
                     var item = $(this);
                     item.find("a").removeClass("active");
                 });
                 navList.find('li [href="/#' + section.attr('id') + '"]').addClass('active');
+            }
+            else if (window.location.pathname == '/' && isOnLoad) {
+                navList.find('li [href="/#' + 'home' + '"]').addClass('active');
             }
         });
     } // End of ChangeClass Function
@@ -90,5 +100,9 @@ $(function () {
     // add Event listener to window
     allWindow.on('scroll', function () {
         scrollFunctions();
+    });
+
+    allWindow.on('load', function () {
+        ChangeClass(true);
     });
 });

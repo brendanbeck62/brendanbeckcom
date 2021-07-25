@@ -12,7 +12,7 @@ Navigation
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff !important;
+    background-color: var(--body-bg);
     z-index: 20;
     /* border-bottom: 1px solid #000; */
 }
@@ -79,7 +79,7 @@ Navigation
 /* END ANIMATED X */
 
 .nav-wrapper .navbar-toggle .icon-bar {
-    background-color: #000;
+    background-color: var(--text-color);
 }
 
 .navbar {
@@ -91,7 +91,7 @@ Navigation
     display: block;
     margin-left: 0px !important;
     padding: 5px;
-    color: #000;
+    color: var(--text-color);
     float: left;
     transition-property: -webkit-filter 0.3s;
 }
@@ -110,13 +110,13 @@ Navigation
     /* right side individual */
     position: relative;
     font-size: 14px;
-    color: black;
+    color: var(--text-color);
     line-height: 1;
 }
 
 .navbar-resume-btn {
-    color: white !important;
-    background-color: black !important;
+    color: var(--navbar-resume-button-text) !important;
+    background-color: var(--navbar-resume-button-bg);
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -134,7 +134,7 @@ Navigation
     height: 2px;
     bottom: 6px;
     left: 10%;
-    background-color: black;
+    background-color: var(--text-color);
     -webkit-transition: all .28s ease-in-out;
     -o-transition: all .28s ease-in-out;
     -moz-transition: all .28s ease-in-out;
@@ -161,21 +161,21 @@ Navigation
 }
 
 .nav-sticky {
-    background-color: #fff !important;
+    background-color: var(--body-bg);
     padding: 6px 0 !important;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--text-color);
 }
 
 .nav-sticky .navbar-toggle .icon-bar {
-    background-color: #000;
+    background-color: var(--text-color);
 }
 
 .nav-sticky .navbar-brand, .nav-sticky .nav li a {
-    color: #000;
+    color: var(--text-color);
 }
 
 .nav-sticky .nav li a:after {
-    background-color: #000;
+    background-color: var(--body-bg);
 }
 
 .nav-sticky .navbar-collapse {
