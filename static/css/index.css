@@ -67,37 +67,6 @@ Home
 
 }
 
-
-.home .social-sidebar-group {
-  position: fixed;
-  /* top: 65%; */
-  bottom: 35%;
-  left: 25px;
-  width: 40px;
-  height: 40px;
-  color: var(--secondary-text-color);
-  transition: color .5s;
-  font-size: 2.25rem;
-}
-.home .social-sidebar-group::after { /* handles the line under */
-  content: "";
-  display: block;
-  width: 1px;
-  height: 100px;
-  background-color: var(--secondary-text-color);
-  transition: background-color .5s;
-  margin: 0px 11px;
-}
-.home .social-sidebar-item {
-  margin-bottom: 25px;
-  transition: color 0.3s, transform 0.3s;
-}
-.home .social-sidebar-item:hover {
-  color: red;
-  transform: translate(0px, -5px);
-}
-
-
 .icon-scroll,
 .icon-scroll:before {
   position: absolute;
@@ -140,9 +109,6 @@ Home
 }
 
 @media screen and (max-width: 768px) {
-  .home .social-sidebar-group {
-    visibility: hidden;
-  }
   .home .icon-scroll {
     visibility: hidden;
   }
