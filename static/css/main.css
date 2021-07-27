@@ -263,6 +263,12 @@ section {
   inset: 0;
 }
 
+/* THIS ISNT WHAT I MEANT TO HAVE HAPPEN
+BUT IT MAKES IF FLY IN FROM OFF SCREEN */
+.moon {
+  padding-right: 120px;
+}
+
 .sun-logo{
   opacity: 0;
   transform: translateY(20%) rotateZ(50deg);
