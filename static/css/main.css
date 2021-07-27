@@ -177,7 +177,7 @@ section {
   left: 25px;
   width: 40px;
   height: 40px;
-  color: var(--secondary-text-color);
+  color: var(--text-color);
   transition: color .5s;
   font-size: 2.25rem;
 }
@@ -186,7 +186,7 @@ section {
   display: block;
   width: 1px;
   height: 100px;
-  background-color: var(--secondary-text-color);
+  background-color: var(--text-color);
   transition: background-color .5s;
   margin: 0px 11px;
 }
@@ -215,7 +215,7 @@ section {
   display: block;
   width: 1px;
   height: 250px;
-  background-color: var(--secondary-text-color);
+  background-color: var(--text-color);
   transition: background-color .5s;
   margin: 0px 11px;
 }
@@ -274,7 +274,7 @@ BUT IT MAKES IF FLY IN FROM OFF SCREEN */
   opacity: 1;
   transform: translateY(0) rotateZ(0deg);
   transition: all .5s ease-out;
-  color: black;
+  color: var(--text-color);
 }
 
 .animate-moon{
