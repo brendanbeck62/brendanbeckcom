@@ -1,6 +1,13 @@
-/*----------------------------------------
-Navigation
-----------------------------------------*/
+
+:root {
+    --navbar-resume-button-bg: #000;
+    --navbar-resume-button-text: #fff;
+  }
+
+  .dark_mode {
+    --navbar-resume-button-bg: #fff;
+    --navbar-resume-button-text: #000;
+  }
 
 .container {
     width: 100%;
