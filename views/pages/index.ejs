@@ -8,6 +8,7 @@
   </head>
   <body>
     <%- include ('../partials/navbar.ejs') %>
+    <%- include ('../partials/icon-sidebars.ejs') %>
     <!--HOME-->
     <section id="home" class="home section">
       <div class="page-table">
@@ -24,48 +25,6 @@
 
             <a href="#about" class="scroll icon-scroll" data-speed="800"></a>
           </div>
-
-          <div class="social-sidebar-group">
-            <div class="social-sidebar-item">
-              <a href="https://www.linkedin.com/in/brendan-beck/" target="_blank">
-              <i class="fa fa-linkedin"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="mailto:brendan.beck62@gmail.com">
-              <i class="fa fa-envelope"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="https://www.instagram.com/brendanbeck62/" target="_blank">
-              <i class="fa fa-instagram"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="https://twitter.com/brendanbeck62" target="_blank">
-              <i class="fa fa-twitter"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="https://github.com/brendanbeck62?tab=repositories" target="_blank">
-              <i class="fa fa-github"></i>
-              </a>
-            </div>
-          </div>
-          <div class="darkmode-toggle-group">
-              <!-- Dark mode toggle -->
-              <div class="darkmode-toggle-item">
-                <button id="theme_toggler">
-                  <div class="moon moon-logo">
-                    <i class="fas fa-moon"></i>
-                  </div>
-                  <div class="sun sun-logo">
-                    <i class="fas fa-sun"></i>
-                  </div>
-                </button>
-              </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -413,7 +372,6 @@
     <!--End More Projects-->
     <%- include ('../partials/footer.ejs') %>
     <%- include ('../partials/includesjs.ejs') %>
-    <script src="js/Typewriter.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
