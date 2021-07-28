@@ -30,7 +30,7 @@
 
 .filter-wrap .filter a {
   margin-left: 10px;
-  color: black;
+  color: var(--text-color);
 }
 
 .filter-wrap .filter a:hover {

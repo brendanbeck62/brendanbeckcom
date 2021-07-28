@@ -3,7 +3,7 @@ Home
 ----------------------------------------*/
 /* #region */
 .home {
-  background-color: #fff;
+  /* background-color: #fff; */
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -25,7 +25,8 @@ Home
   font-size: 1.5rem;
 }
 .main-landing>h2 {
-  color: #444;
+  color: var(--secondary-text-color);
+  transition: color .5s;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -47,53 +48,24 @@ Home
 #resume-btn {
   position: relative;
   display: inline-block;
-  /* transform: translate(-50%, -50%); */
   width: 150px;
   margin-top: 30px;
   background-color: transparent;
-  color: #000;
+  color: var(--text-color);
   line-height: 20px;
   font-size: 1.75rem;
   padding: 20px 28px; /* sets the height and width of the button */
-  border: 1px solid #000;
+  border: 1px solid var(--text-color);
   cursor: pointer;
-  /*border-radius: 2px;*/ /*how round the corners are */
   text-align: center;
-  transition: color 0.3s, background-color 0.3s;
+  transition: color .5s, background-color .5s, border .5s;
 }
 #resume-btn:hover {
-  background-color: #000;
-  color: #fff;
-}
+  background-color: var(--text-color);
+  color: var(--hover-text-color);
+  transition: color .5s, background-color .5s, border .5s;
 
-
-.home .social-sidebar-group {
-  position: fixed;
-  /* top: 65%; */
-  bottom: 35%;
-  left: 25px;
-  width: 40px;
-  height: 40px;
-  color: #444;
-  font-size: 2.25rem;
 }
-.home .social-sidebar-group::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 100px;
-  background-color: #aaa;
-  margin: 0px 11px;
-}
-.home .social-sidebar-item {
-  margin-bottom: 25px;
-  transition: color 0.3s, transform 0.3s;
-}
-.home .social-sidebar-item:hover {
-  color: red;
-  transform: translate(0px, -5px);
-}
-
 
 .icon-scroll,
 .icon-scroll:before {
@@ -106,19 +78,19 @@ Home
   /* margin-left: -20px; */
   bottom: 0%;
   /* margin-top: -35px; */
-  box-shadow: inset 0 0 0 1px #000;
+  box-shadow: inset 0 0 0 1px var(--text-color);
   border-radius: 25px;
   opacity: 1;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s, box-shadow .5s;
 }
 .icon-scroll:hover {
-  background-color: #efefef;
+  background-color: var(--hover-text-color);
 }
 .icon-scroll:before {
   content: '';
   width: 6px;
   height: 6px;
-  background: #000;
+  background: var(--text-color);
   margin-left: -3px;
   top: 8px;
   border-radius: 4px;
@@ -137,9 +109,6 @@ Home
 }
 
 @media screen and (max-width: 768px) {
-  .home .social-sidebar-group {
-    visibility: hidden;
-  }
   .home .icon-scroll {
     visibility: hidden;
   }
@@ -219,6 +188,7 @@ Resume
   letter-spacing: 5px;
   font-weight: bold;
   background: #e6e6e6;
+  color: #252525;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -541,7 +511,8 @@ More Projects
 .more-project-card > .card-header > .icon {
     padding: 0px 5px;
     font-size: 3rem;
-    transition: color 0.3s;
+    color: var(--text-color);
+    transition: color 0.5s;
 }
 .more-project-card > .card-header > .icon:hover {
     color: red;

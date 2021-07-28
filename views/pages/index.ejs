@@ -8,6 +8,7 @@
   </head>
   <body>
     <%- include ('../partials/navbar.ejs') %>
+
     <!--HOME-->
     <section id="home" class="home section">
       <div class="page-table">
@@ -23,39 +24,14 @@
             <a href="documents/Brendan-Beck-Resume.pdf" id="resume-btn" target="_blank">RESUME</a>
 
             <a href="#about" class="scroll icon-scroll" data-speed="800"></a>
-
-
-          </div>
-          <div class="social-sidebar-group">
-            <div class="social-sidebar-item">
-              <a href="https://www.linkedin.com/in/brendan-beck/" target="_blank">
-              <i class="fa fa-linkedin"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="mailto:brendan.beck62@gmail.com">
-              <i class="fa fa-envelope"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="https://www.instagram.com/brendanbeck62/" target="_blank">
-              <i class="fa fa-instagram"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="https://twitter.com/brendanbeck62" target="_blank">
-              <i class="fa fa-twitter"></i>
-              </a>
-            </div>
-            <div class="social-sidebar-item">
-              <a href="https://github.com/brendanbeck62?tab=repositories" target="_blank">
-              <i class="fa fa-github"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Weird bug where this has to render after the home section,
+      otherwise unresponsive unless scroll down -->
+    <%- include ('../partials/icon-sidebars.ejs') %>
     <!--END HOME-->
     <!--About-->
     <section id="about" class="about section">
@@ -400,7 +376,6 @@
     <!--End More Projects-->
     <%- include ('../partials/footer.ejs') %>
     <%- include ('../partials/includesjs.ejs') %>
-    <script src="js/Typewriter.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

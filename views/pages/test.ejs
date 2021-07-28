@@ -1,27 +1,42 @@
 <html>
+
 <head>
 
-    <%- include ('../partials/includes.ejs') %>
-
-    <link rel="stylesheet" type="text/css" href="css/test.css"/>
+  <%- include ('../partials/includes.ejs') %>
+  <link rel="stylesheet" type="text/css" href="css/test.css" />
 
 </head>
 
 <body>
-    <%- include ('../partials/navbar.ejs') %>
-    <section id="home" class="home parallax section">
-        <div class="page-table">
-            <div class="table-cell text-center">
-                <div id="type-text"></div>
+  <%- include ('../partials/navbar.ejs') %>
+  <section id="home" class="home section">
+    <div class="page-table">
+      <div class="table-cell text-center">
+        <div class="centered-container">
+          <button id="theme_toggler">
+            <div class="moon moon-logo">
+              <i class="fas fa-moon"></i>
             </div>
+            <div class="sun sun-logo">
+              <i class="fas fa-sun"></i>
+            </div>
+          </button>
+
+          <div class="card">
+            <h2>Hello! this is a dark theme!</h2>
+          </div>
+          <div class="another-card">
+            <h2>This is another card!</h2>
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
 
-    <%- include ('../partials/footer.ejs') %>
-    <%- include ('../partials/includesjs.ejs') %>
+  <%- include ('../partials/footer.ejs') %>
+  <%- include ('../partials/includesjs.ejs') %>
 
-    <script src="js/Typewriter.js"></script>
-    <script src="js/typer.js"></script>
 </body>
 </html>
