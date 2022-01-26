@@ -170,6 +170,12 @@ section {
 }
 
 
+/* Social icon sidebars */
+.icon-sidebar-parent {
+  width: 100%;
+  position: relative;
+}
+
 .social-sidebar-group {
   position: fixed;
   /* top: 65%; */
@@ -185,7 +191,7 @@ section {
   content: "";
   display: block;
   width: 1px;
-  height: 100px;
+  height: 50px;
   background-color: var(--text-color);
   transition: background-color .5s;
   margin: 0px 11px;
