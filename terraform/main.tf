@@ -40,21 +40,7 @@ resource "aws_instance" "ubuntu_2004" {
   ami                    = data.aws_ami.ubuntu_2004.id
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.main.id]
-  key_name = "aws-ec2-brendanbeckcom"
-
-  #provisioner "remote-exec" {
-  #  inline = [
-  #    "touch hello.txt",
-  #    "echo helloworld remote provisioner >> hello.txt",
-  #  ]
-  #}
-  #connection {
-  #  type        = "ssh"
-  #  host        = self.public_ip
-  #  user        = "ubuntu"
-  #  private_key = file("/home/brendan/.ssh/aws-ec2-brendanbeckcom.pem")
-  #  timeout     = "4m"
-  #}
+  key_name               = "aws-ec2-brendanbeckcom"
 
   tags = {
     Name = "${var.prefix}-test"
@@ -62,33 +48,61 @@ resource "aws_instance" "ubuntu_2004" {
 }
 
 resource "aws_security_group" "main" {
+  name        = "main"
+  description = "all all out, ssh http https in"
+  lifecycle {
+    # Necessary if changing 'name' or 'name_prefix' properties
+    # Good for development
+    create_before_destroy = true
+  }
+
   egress = [
     {
+      from_port        = 0
+      to_port          = 0
+      protocol         = "-1"
       cidr_blocks      = ["0.0.0.0/0", ]
       description      = ""
-      from_port        = 0
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
-      protocol         = "-1"
       security_groups  = []
       self             = false
-      to_port          = 0
     }
   ]
   ingress = [
     {
+      from_port        = 22
+      to_port          = 22
+      protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0", ]
       description      = ""
-      from_port        = 22
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
-      protocol         = "tcp"
       security_groups  = []
       self             = false
-      to_port          = 22
+    },
+    # TODO: change to port 80
+    {
+      from_port        = 5000
+      to_port          = 5000
+      protocol         = "tcp"
+      cidr_blocks      = ["0.0.0.0/0", ]
+      description      = "flask default 5000"
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      security_groups  = []
+      self             = false
+    },
+    {
+      from_port        = 443
+      to_port          = 443
+      protocol         = "tcp"
+      cidr_blocks      = ["0.0.0.0/0", ]
+      description      = ""
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      security_groups  = []
+      self             = false
     }
   ]
 }
-
-# TODO: add port 443 allows
-# TODO: how to actually run the webserver
