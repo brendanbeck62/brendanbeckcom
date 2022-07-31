@@ -1,6 +1,9 @@
 /node_modules
 
+*.swp
 /.vscode
 
+*/.terraform/
+tf-modules/remote_state/.terraform/
 /.terraform
-terraform.tfstate
+terraform.tfstate*

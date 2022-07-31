@@ -1,10 +1,16 @@
-# TODO: remote state
 terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.16"
     }
+  }
+  backend "s3" {
+    bucket         = "brendanbeckcom-remote-state"
+    encrypt        = true
+    dynamodb_table = "brendanbeckcom-remote-state-lock"
+    key            = "terraform.tfstate"
+    region         = "us-west-2"
   }
 }
 
@@ -13,7 +19,7 @@ provider "aws" {
 }
 
 # ami lookup
-data "aws_ami" "ubuntu" {
+data "aws_ami" "ubuntu_2004" {
   most_recent = true
 
   filter {
@@ -31,11 +37,11 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "ubuntu_2004" {
   # 20.04
-  ami           = data.aws_ami.ubuntu.id
+  ami           = data.aws_ami.ubuntu_2004.id
   instance_type = "t2.micro"
 
   tags = {
-    Name = "test"
+    Name = "${var.prefix}-test"
   }
 }
 
