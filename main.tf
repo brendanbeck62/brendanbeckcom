@@ -40,21 +40,21 @@ resource "aws_instance" "ubuntu_2004" {
   ami                    = data.aws_ami.ubuntu_2004.id
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.main.id]
-
   key_name = "aws-ec2-brendanbeckcom"
+
   #provisioner "remote-exec" {
   #  inline = [
   #    "touch hello.txt",
   #    "echo helloworld remote provisioner >> hello.txt",
   #  ]
   #}
-  connection {
-    type        = "ssh"
-    host        = self.public_ip
-    user        = "ubuntu"
-    private_key = file("/home/brendan/.ssh/aws-ec2-brendanbeckcom.pem")
-    timeout     = "4m"
-  }
+  #connection {
+  #  type        = "ssh"
+  #  host        = self.public_ip
+  #  user        = "ubuntu"
+  #  private_key = file("/home/brendan/.ssh/aws-ec2-brendanbeckcom.pem")
+  #  timeout     = "4m"
+  #}
 
   tags = {
     Name = "${var.prefix}-test"
