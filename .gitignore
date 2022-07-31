@@ -4,6 +4,6 @@
 /.vscode
 
 */.terraform/
-tf-modules/remote_state/.terraform/
+terraform/modules/remote_state/.terraform/
 /.terraform
 terraform.tfstate*
