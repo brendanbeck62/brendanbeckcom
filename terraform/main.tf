@@ -19,25 +19,25 @@ provider "aws" {
 }
 
 # ami lookup
-data "aws_ami" "ubuntu_2004" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-}
+#data "aws_ami" "ubuntu_2004" {
+#  most_recent = true
+#
+#  filter {
+#    name   = "name"
+#    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+#  }
+#
+#  filter {
+#    name   = "virtualization-type"
+#    values = ["hvm"]
+#  }
+#
+#  owners = ["099720109477"] # Canonical
+#}
 
 resource "aws_instance" "ubuntu_2004" {
-  # 20.04
-  ami                    = data.aws_ami.ubuntu_2004.id
+  #ami                    = data.aws_ami.ubuntu_2004.id
+  ami                    = "ami-06608b239a0db5653"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.main.id]
   key_name               = "aws-ec2-brendanbeckcom"
@@ -106,3 +106,5 @@ resource "aws_security_group" "main" {
     }
   ]
 }
+
+# TODO: Elastic IP
