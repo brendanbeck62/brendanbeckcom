@@ -38,9 +38,8 @@ build {
     source      = "../src"
   }
 
-  # TODO: change this to script, and use same sh as in packer-test directory
   provisioner "shell" {
-    inline = ["mv /tmp/src ~"]
+    script = "deploy-node.sh"
   }
 
   #post-processor "manifest" {
