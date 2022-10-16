@@ -1,9 +1,9 @@
 # brendanbeck.com
 
-## Main server file
+## Frontend
 server.js
 
-## Routing
+### Routing
 All api requests go through `/api/`
 
 All front end and static requests go through `/`
@@ -12,11 +12,11 @@ Meaning if you go to `localhost:8080/software`  it will take you to the software
 with html, css, javascript etc.. but if you go to `localhost:8080/api/software`
 it will not grab html.. the route assumes you are trying to access an api functionality
 
-## HTML Pages
+### HTML Pages
 All html pages are in the `/views/pages/` directory. These are ejs files which
 call partials in ejs to include html in other pages.
 
-## Static Files (CSS, Javascript)
+### Static Files (CSS, Javascript)
 /static/ directory
 
 When an html page links to a stylesheet or some script, express serves the Static
@@ -37,13 +37,23 @@ as you continue this directory structure of placing static files in `/static`
 directory and the html in the `views/pages/` directory and the reusable html
 in the `/views/partials/` directory
 
-## Server Setup
-- deploying site on AWS - https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server
-- https://pm2.keymetrics.io/docs/usage/startup/#generating-a-startup-script
-- https://pm2.keymetrics.io/docs/usage/specifics/
+## Deployment
+Deployment occurs in 2 stages:
+- packer builds an AMI
+- terraform deploys and EC2 using that AMI
+
+### Packer build
+Very simple packer setup for now, that copies the `src` directory onto the instance and configures pm2 to start the node app using systemd.
+
+### Terraform Deployment
+Deploys the AMI created by packer onto an EC2. See the TODOs in `main.tf` for future work needed.
 
 ## Dev Resources
+
+### Frontend
 - https://crypton.trading/
 - https://jsfiddle.net/hzfxp2L9/
 - https://github.com/tameemsafi/typewriterjs
 - https://brittanychiang.com/
+
+### Deployment
