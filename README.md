@@ -36,20 +36,35 @@ as you continue this directory structure of placing static files in /static
 directory and the html in the views/pages/ directory and the reusable html
 in the /views/partials/ directory
 
-## Server Setup
+## Development
+While in development, I am using server.js in the root to test the end points. I plan on switching to a class structure, where the module can be required in and used as functions, rather than just as api end points.
 
-deploying site on AWS - https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server
+### NPM
+`server.js` is the main entry point
+```
+"scripts": {
+    "dev": "NODE_ENV=dev node server.js",
+    "start": "NODE_ENV=prod node server.js"
+  },
+```
 
-https://pm2.keymetrics.io/docs/usage/startup/#generating-a-startup-script
 
-https://pm2.keymetrics.io/docs/usage/specifics/
+### .env files
+`NODE_ENV` is set in package.json, can also just be exported.
 
-## Dev Resources
+The `NODE_ENV` corresponds to the suffix of a corresponding `.env` file.
 
-https://crypton.trading/
+Sample:
 
-https://jsfiddle.net/hzfxp2L9/
+.env.dev:
+```
+HOST=127.0.0.1
+PORT=8080
+```
 
-https://github.com/tameemsafi/typewriterjs
+.env.prod:
+```
+HOST=127.0.0.1
+PORT=80
+```
 
-https://brittanychiang.com/

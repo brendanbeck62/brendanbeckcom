@@ -1,13 +1,14 @@
 'use strict';
 
+require('dotenv').config({path: __dirname + `/.env.${process.env.NODE_ENV}`});
 const express = require('express');
 const url = require('url');
 const favicon = require('express-favicon');
 const fs = require('fs');
 
 // Constants
-const PORT = 80;
-const HOST = '0.0.0.0';
+var HOST = process.env.HOST || '127.0.0.1';
+var PORT = process.env.PORT || 8080;
 
 // App test
 const app = express();
@@ -51,4 +52,4 @@ app.get(/^(?!\/api\/)/, (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log(`Running it on http://${HOST}:${PORT}`);
+console.log(`brendanbeck.com running on http://${HOST}:${PORT}`);
