@@ -54,11 +54,15 @@ While in development, I am using server.js in the root to test the end points. I
 
 The `NODE_ENV` corresponds to the suffix of a corresponding `.env` file.
 
+> :warning: **Localhost for docker containers**: 127.0.01 refers to the network interface of the host. When mapping a docker container locally, use `0.0.0.0`. https://stackoverflow.com/a/59182290
+
+
+
 Sample:
 
 .env.dev:
 ```
-HOST=127.0.0.1
+HOST=0.0.0.0
 PORT=8080
 ```
 
