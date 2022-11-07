@@ -51,5 +51,6 @@ app.get(/^(?!\/api\/)/, (req, res) => {
 
 });
 
-app.listen(PORT, HOST);
-console.log(`brendanbeck.com running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+    console.log(`brendanbeck.com running on http://${HOST}:${PORT}`);
+});
