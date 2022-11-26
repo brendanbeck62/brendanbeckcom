@@ -1,7 +1,11 @@
 **/node_modules/
-
 .vscode
-
 *.swp
-
 *.env*
+
+**/.terraform/*
+# .tfstate files
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
