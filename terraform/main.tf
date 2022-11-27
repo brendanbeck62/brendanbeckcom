@@ -30,11 +30,6 @@ resource "aws_default_subnet" "default_subnet_c" {
   availability_zone = "us-west-2c"
 }
 
-# Create the repo
-resource "aws_ecr_repository" "main" {
-  name = "${var.prefix}-repo"
-}# end create repr
-
 # TODO: eventually tag containers dev and prod?
 ## build and push the container
 #resource "null_resource" "docker_build" {
@@ -57,6 +52,12 @@ resource "aws_ecr_repository" "main" {
 #}# end pushing the container
 
 # =============================================================================
+# Reference the Repository
+data "aws_ecr_repository" "main" {
+  name = "${var.prefix}-repo"
+}
+
+# =============================================================================
 # Create the cluster
 resource "aws_ecs_cluster" "prod" {
   name = "${var.prefix}-prod-cluster"
@@ -71,7 +72,7 @@ resource "aws_ecs_task_definition" "prod" {
   [
     {
       "name": "${var.prefix}-prod-task",
-      "image": "${aws_ecr_repository.main.repository_url}",
+      "image": "${data.aws_ecr_repository.main.repository_url}",
       "essential": true,
       "portMappings": [
         {
@@ -156,6 +157,7 @@ resource "aws_security_group" "service_security_group" {
 
 # =============================================================================
 # Create Load Balancer
+# TOOD: re-enable output for dns_name
 resource "aws_alb" "prod" {
   name               = "${var.prefix}-prod-alb" # Naming our load balancer
   load_balancer_type = "application"
