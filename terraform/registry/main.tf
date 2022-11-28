@@ -17,16 +17,25 @@ provider "aws" {
   region = "us-west-2"
 }
 
+# Read the state file from the root to get the prefix variable
+data "terraform_remote_state" "root_state" {
+  backend = "s3"
+
+  config = {
+    bucket         = "brendanbeckcom-remote-state"
+    key            = "terraform.tfstate"
+    region         = "us-west-2"
+  }
+}
+
 # Create the repo
 resource "aws_ecr_repository" "main" {
-  name = "${var.prefix}-repo"
+  name = "${data.terraform_remote_state.root_state.outputs.prefix}-repo"
 }# end create repr
-
-variable "prefix" {
-  default = "brendanbeckcom"
-}
 
 output "ecr_repo" {
   description = "name of ecr repo"
   value = aws_ecr_repository.main.name
 }
+
+

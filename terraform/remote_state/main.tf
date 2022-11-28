@@ -2,12 +2,23 @@ provider "aws" {
   region  = "us-west-2"
 }
 
+# Read the state file from the root to get the prefix variable
+data "terraform_remote_state" "root_state" {
+  backend = "s3"
+
+  config = {
+    bucket         = "brendanbeckcom-remote-state"
+    key            = "terraform.tfstate"
+    region         = "us-west-2"
+  }
+}
+
 resource "aws_s3_bucket" "remote_state" {
-  bucket = "${var.prefix}-remote-state"
+  bucket = "${data.terraform_remote_state.root_state.outputs.prefix}-remote-state"
   # acl    = "authenticated-read"
 
   tags = {
-    Name        = "${var.prefix}-remote-state"
+    Name        = "${data.terraform_remote_state.root_state.outputs.prefix}-remote-state"
   }
 }
 
@@ -29,7 +40,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "remote_state" {
 }
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name          = "${var.prefix}-remote-state-lock"
+  name          = "${data.terraform_remote_state.root_state.outputs.prefix}-remote-state-lock"
   billing_mode  = "PAY_PER_REQUEST"
   hash_key      = "LockID"
   attribute {
@@ -37,6 +48,6 @@ resource "aws_dynamodb_table" "terraform_locks" {
     type        = "S"
   }
   tags = {
-    Name        = "${var.prefix}-remote-state-lock"
+    Name        = "${data.terraform_remote_state.root_state.outputs.prefix}-remote-state-lock"
   }
 }
