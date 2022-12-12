@@ -19,15 +19,33 @@ provider "aws" {
 
 # Default VPC
 resource "aws_default_vpc" "default_vpc" {
+  tags = {
+    Name = "Default VPC"
+  }
 }
 resource "aws_default_subnet" "default_subnet_a" {
   availability_zone = "us-west-2a"
+  tags = {
+    Name = "Default Subnet a"
+  }
 }
 resource "aws_default_subnet" "default_subnet_b" {
   availability_zone = "us-west-2b"
+  tags = {
+    Name = "Default Subnet b"
+  }
 }
 resource "aws_default_subnet" "default_subnet_c" {
   availability_zone = "us-west-2c"
+  tags = {
+    Name = "Default Subnet c"
+  }
+}
+resource "aws_default_subnet" "default_subnet_d" {
+  availability_zone = "us-west-2d"
+  tags = {
+    Name = "Default Subnet d"
+  }
 }
 
 # TODO: eventually tag containers dev and prod?
@@ -132,7 +150,12 @@ resource "aws_ecs_service" "prod" {
   }
 
   network_configuration {
-    subnets          = ["${aws_default_subnet.default_subnet_a.id}", "${aws_default_subnet.default_subnet_b.id}", "${aws_default_subnet.default_subnet_c.id}"]
+    subnets          = [
+      "${aws_default_subnet.default_subnet_a.id}",
+      "${aws_default_subnet.default_subnet_b.id}",
+      "${aws_default_subnet.default_subnet_c.id}",
+      "${aws_default_subnet.default_subnet_d.id}"
+    ]
     assign_public_ip = true                                                # Providing our containers with public IPs
     security_groups  = ["${aws_security_group.service_security_group.id}"] # Setting the security group
   }
@@ -159,12 +182,13 @@ resource "aws_security_group" "service_security_group" {
 # Create Load Balancer
 # TOOD: re-enable output for dns_name
 resource "aws_alb" "prod" {
-  name               = "${var.prefix}-prod-alb" # Naming our load balancer
+  name               = "${var.prefix}-prod-alb"
   load_balancer_type = "application"
   subnets = [ # Referencing the default subnets
     "${aws_default_subnet.default_subnet_a.id}",
     "${aws_default_subnet.default_subnet_b.id}",
-    "${aws_default_subnet.default_subnet_c.id}"
+    "${aws_default_subnet.default_subnet_c.id}",
+    "${aws_default_subnet.default_subnet_d.id}"
   ]
   # Referencing the security group
   security_groups = ["${aws_security_group.load_balancer_security_group.id}"]
