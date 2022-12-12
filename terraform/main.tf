@@ -103,10 +103,10 @@ resource "aws_ecs_task_definition" "prod" {
     }
   ]
   DEFINITION
-  requires_compatibilities = ["FARGATE"] # Stating that we are using ECS Fargate
-  network_mode             = "awsvpc"    # Using awsvpc as our network mode as this is required for Fargate
-  memory                   = 512         # Specifying the memory our container requires
-  cpu                      = 256         # Specifying the CPU our container requires
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  memory                   = 512
+  cpu                      = 256
   execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
 }
 
@@ -137,14 +137,14 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 # Create the service (like ASG of EC2)
 resource "aws_ecs_service" "prod" {
   name            = "${var.prefix}-prod-service"
-  cluster         = "${aws_ecs_cluster.prod.id}"             # Referencing our created Cluster
-  task_definition = "${aws_ecs_task_definition.prod.arn}" # Referencing the task our service will spin up
+  cluster         = "${aws_ecs_cluster.prod.id}"
+  task_definition = "${aws_ecs_task_definition.prod.arn}"
   launch_type     = "FARGATE"
   desired_count   = 3
 
   # attach to the ELB
   load_balancer {
-    target_group_arn = "${aws_lb_target_group.target_group.arn}" # Referencing our target group
+    target_group_arn = "${aws_lb_target_group.target_group.arn}"
     container_name   = "${aws_ecs_task_definition.prod.family}"
     container_port   = 8080 # Specifying the container port
   }
@@ -156,8 +156,8 @@ resource "aws_ecs_service" "prod" {
       "${aws_default_subnet.default_subnet_c.id}",
       "${aws_default_subnet.default_subnet_d.id}"
     ]
-    assign_public_ip = true                                                # Providing our containers with public IPs
-    security_groups  = ["${aws_security_group.service_security_group.id}"] # Setting the security group
+    assign_public_ip = true # Providing our containers with public IPs
+    security_groups  = ["${aws_security_group.service_security_group.id}"]
   }
 }
 resource "aws_security_group" "service_security_group" {
@@ -180,17 +180,16 @@ resource "aws_security_group" "service_security_group" {
 
 # =============================================================================
 # Create Load Balancer
-# TOOD: re-enable output for dns_name
 resource "aws_alb" "prod" {
   name               = "${var.prefix}-prod-alb"
   load_balancer_type = "application"
-  subnets = [ # Referencing the default subnets
+  subnets = [
     "${aws_default_subnet.default_subnet_a.id}",
     "${aws_default_subnet.default_subnet_b.id}",
     "${aws_default_subnet.default_subnet_c.id}",
     "${aws_default_subnet.default_subnet_d.id}"
   ]
-  # Referencing the security group
+
   security_groups = ["${aws_security_group.load_balancer_security_group.id}"]
 }
 resource "aws_security_group" "load_balancer_security_group" {
@@ -198,7 +197,7 @@ resource "aws_security_group" "load_balancer_security_group" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Allowing traffic in from all sources
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -213,15 +212,15 @@ resource "aws_lb_target_group" "target_group" {
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
-  vpc_id      = "${aws_default_vpc.default_vpc.id}" # Referencing the default VPC
+  vpc_id      = "${aws_default_vpc.default_vpc.id}"
 }
 resource "aws_lb_listener" "listener" {
-  load_balancer_arn = "${aws_alb.prod.arn}" # Referencing our load balancer
+  load_balancer_arn = "${aws_alb.prod.arn}"
   port              = "80"
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = "${aws_lb_target_group.target_group.arn}" # Referencing our tagrte group
+    target_group_arn = "${aws_lb_target_group.target_group.arn}"
   }
 }# end create loadbalancer
 
