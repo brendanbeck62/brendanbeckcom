@@ -2,14 +2,13 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
     }
   }
   backend "s3" {
-    bucket         = "brendanbeckcom-remote-state"
+    bucket         = "356960567614-us-west-2-remote-state"
     encrypt        = true
-    dynamodb_table = "brendanbeckcom-remote-state-lock"
-    key            = "network-terraform.tfstate"
+    dynamodb_table = "356960567614-us-west-2-remote-state-lock"
+    key            = "bbcom/bbcom-network.tfstate"
     region         = "us-west-2"
   }
 }
@@ -17,22 +16,11 @@ provider "aws" {
   region = "us-west-2"
 }
 
-# Read the state file from the root to get the prefix variable
-data "terraform_remote_state" "root_state" {
-  backend = "s3"
-
-  config = {
-    bucket         = "brendanbeckcom-remote-state"
-    key            = "terraform.tfstate"
-    region         = "us-west-2"
-  }
-}
-
-
 #name = "${data.terraform_remote_state.root_state.outputs.prefix}-repo"
 
 # =============================================================================
 # Elastic Ip for the load balancer
+# TODO: When its time to deploy, import the elastic IP (52.12.167.122) and take over
 resource "aws_eip" "load_balancer" {
   vpc = true
 }
