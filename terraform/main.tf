@@ -50,7 +50,8 @@ resource "aws_default_subnet" "default_subnet_d" {
 }
 
 # TODO: eventually tag containers dev and prod?
-## build and push the container
+# build and push the container
+#aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 356960567614.dkr.ecr.us-west-2.amazonaws.com
 #resource "null_resource" "docker_build" {
 #  provisioner "local-exec" {
 #    command = "docker build -t brendanbeck62/bbcom . --platform=linux/amd64"
