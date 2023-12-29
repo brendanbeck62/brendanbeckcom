@@ -6,5 +6,5 @@ docker build -t brendanbeck62/bbcom . --platform=linux/amd64
 docker tag brendanbeck62/bbcom:latest 356960567614.dkr.ecr.us-west-2.amazonaws.com/brendanbeckcom-repo:latest
 docker push 356960567614.dkr.ecr.us-west-2.amazonaws.com/brendanbeckcom-repo:latest
 
-#aws ecs update-service --cluster my-cluster --service my-first-service --force-new-deployment
+#aws ecs update-service --cluster brendanbeckcom-prod-cluster --service brendanbeckcom-prod-service --force-new-deployment
 
