@@ -56,7 +56,14 @@ HOST=127.0.0.1
 PORT=80
 ```
 
+### AWS Infra
+Layed out pretty well in the terraform.
+1. Containers are published to ECR
+1. Target group is 3 container instances stood up in ecs Fargate across 3 subnets
+  1. ECS Security group only allows traffic from ALB Security group
+1. Application load balancer forwarding port 80 to it's target group
+1. DNS is configured by Cloudflare, pointing to the DNS name of the ALB.
+
 ## TODO
-- [ ] Containerizing bbcom
-  - [ ] Static file server (s3?)
+- [ ] Static file server (s3?)
 - [ ] JWT server to put put other subdomains behind a login [Devon Crawford Video](https://www.youtube.com/watch?v=SC7lLm6QAb8&ab_channel=DevonCrawford)
