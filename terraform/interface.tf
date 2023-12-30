@@ -3,6 +3,26 @@ variable "prefix" {
   description = "app name to prefix buckets with"
 }
 
+locals {
+    env = {
+        default = {
+            env_suffix = ""
+            container_count = 1
+        }
+        prod = {
+            env_suffix = "prod"
+            container_count = 3
+        }
+        test = {
+            env_suffix = "test"
+            container_count = 1
+        }
+    }
+    environmentvars = "${contains(keys(local.env), terraform.workspace) ? terraform.workspace : "default"}"
+    workspace       = "${merge(local.env["default"], local.env[local.environmentvars])}"
+
+}
+
 output "alb_url" {
   description = "URL of load balancer to hit from the outside world"
   value = aws_alb.prod.dns_name

@@ -64,6 +64,9 @@ Layed out pretty well in the terraform.
 1. Application load balancer forwarding port 80 to it's target group
 1. DNS is configured by Cloudflare, pointing to the DNS name of the ALB.
 
+There are currently 2 workspaces configured, prod and test.
+The idea is that any infra changes occur in the test workspace for testing, and then once PRd into master the prod workspace can be caughtup.
+
 ## TODO
 - [ ] Static file server (s3?)
 - [ ] JWT server to put put other subdomains behind a login [Devon Crawford Video](https://www.youtube.com/watch?v=SC7lLm6QAb8&ab_channel=DevonCrawford)
