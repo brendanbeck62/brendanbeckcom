@@ -67,6 +67,10 @@ Layed out pretty well in the terraform.
 There are currently 2 workspaces configured, prod and test.
 The idea is that any infra changes occur in the test workspace for testing, and then once PRd into master the prod workspace can be caughtup.
 
+I typically spin down the test workspace after I am done working on it, to reduce cost (with the exception of ECR)
+
 ## TODO
 - [ ] Static file server (s3?)
+- [ ] Github action on PR to run terraform apply on prod workspace
+- [ ] Better tagging practice for containerized node app
 - [ ] JWT server to put put other subdomains behind a login [Devon Crawford Video](https://www.youtube.com/watch?v=SC7lLm6QAb8&ab_channel=DevonCrawford)
