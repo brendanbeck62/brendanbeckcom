@@ -74,24 +74,24 @@ resource "aws_default_subnet" "default_subnet_d" {
 # =============================================================================
 # Reference the Repository
 data "aws_ecr_repository" "main" {
-  name = "${var.prefix}-repo"
+  name = "${var.prefix}-repo-${local.workspace["env_suffix"]}"
 }
 
 # =============================================================================
 # Create the cluster
 resource "aws_ecs_cluster" "prod" {
-  name = "${var.prefix}-prod-cluster"
+  name = "${var.prefix}-cluster-${local.workspace["env_suffix"]}"
 }# end create cluster
 
 
 # =============================================================================
 # Create task (run configuration)
 resource "aws_ecs_task_definition" "prod" {
-  family                   = "${var.prefix}-prod-task"
+  family                   = "${var.prefix}-task-${local.workspace["env_suffix"]}"
   container_definitions    = <<DEFINITION
   [
     {
-      "name": "${var.prefix}-prod-task",
+      "name": "${var.prefix}-task-${local.workspace["env_suffix"]}",
       "image": "${data.aws_ecr_repository.main.repository_url}",
       "essential": true,
       "portMappings": [
@@ -113,7 +113,7 @@ resource "aws_ecs_task_definition" "prod" {
 }
 
 resource "aws_iam_role" "ecsTaskExecutionRole" {
-  name               = "ecsTaskExecutionRole"
+  name               = "${var.prefix}-ecsTastExecutionRole-${local.workspace["env_suffix"]}"
   assume_role_policy = "${data.aws_iam_policy_document.assume_role_policy.json}"
 }
 
@@ -138,11 +138,11 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 # =============================================================================
 # Create the service (like ASG of EC2)
 resource "aws_ecs_service" "prod" {
-  name            = "${var.prefix}-prod-service"
+  name            = "${var.prefix}-service-${local.workspace["env_suffix"]}"
   cluster         = "${aws_ecs_cluster.prod.id}"
   task_definition = "${aws_ecs_task_definition.prod.arn}"
   launch_type     = "FARGATE"
-  desired_count   = 3
+  desired_count   = local.workspace["container_count"]
 
   # attach to the ELB
   load_balancer {
@@ -183,7 +183,7 @@ resource "aws_security_group" "service_security_group" {
 # =============================================================================
 # Create Load Balancer
 resource "aws_alb" "prod" {
-  name               = "${var.prefix}-prod-alb"
+  name               = "${var.prefix}-alb-${local.workspace["env_suffix"]}"
   load_balancer_type = "application"
   subnets = [
     "${aws_default_subnet.default_subnet_a.id}",
@@ -210,7 +210,7 @@ resource "aws_security_group" "load_balancer_security_group" {
   }
 }
 resource "aws_lb_target_group" "target_group" {
-  name        = "target-group"
+  name        = "${var.prefix}-targetgroup-${local.workspace["env_suffix"]}"
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"

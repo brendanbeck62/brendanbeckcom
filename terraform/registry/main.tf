@@ -16,9 +16,26 @@ provider "aws" {
   region = "us-west-2"
 }
 
+locals {
+    env = {
+        default = {
+            env_suffix = ""
+        }
+        prod = {
+            env_suffix = "-prod"
+        }
+        test = {
+            env_suffix = "-test"
+        }
+    }
+    environmentvars = "${contains(keys(local.env), terraform.workspace) ? terraform.workspace : "default"}"
+    workspace       = "${merge(local.env["default"], local.env[local.environmentvars])}"
+
+}
+
 # Create the repo
 resource "aws_ecr_repository" "main" {
-  name = "brendanbeckcom-repo"
+  name = "brendanbeckcom-repo${local.workspace["env_suffix"]}"
 }# end create repr
 
 output "ecr_repo" {
