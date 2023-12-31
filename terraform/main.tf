@@ -81,7 +81,7 @@ data "aws_ecr_repository" "main" {
 # Create the cluster
 resource "aws_ecs_cluster" "prod" {
   name = "${var.prefix}-cluster-${local.workspace["env_suffix"]}"
-}# end create cluster
+} # end create cluster
 
 
 # =============================================================================
@@ -109,12 +109,12 @@ resource "aws_ecs_task_definition" "prod" {
   network_mode             = "awsvpc"
   memory                   = 512
   cpu                      = 256
-  execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
+  execution_role_arn       = aws_iam_role.ecsTaskExecutionRole.arn
 }
 
 resource "aws_iam_role" "ecsTaskExecutionRole" {
   name               = "${var.prefix}-ecsTastExecutionRole-${local.workspace["env_suffix"]}"
-  assume_role_policy = "${data.aws_iam_policy_document.assume_role_policy.json}"
+  assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
 data "aws_iam_policy_document" "assume_role_policy" {
@@ -129,7 +129,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
-  role       = "${aws_iam_role.ecsTaskExecutionRole.name}"
+  role       = aws_iam_role.ecsTaskExecutionRole.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 } # end create task
 
@@ -139,20 +139,20 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 # Create the service (like ASG of EC2)
 resource "aws_ecs_service" "prod" {
   name            = "${var.prefix}-service-${local.workspace["env_suffix"]}"
-  cluster         = "${aws_ecs_cluster.prod.id}"
-  task_definition = "${aws_ecs_task_definition.prod.arn}"
+  cluster         = aws_ecs_cluster.prod.id
+  task_definition = aws_ecs_task_definition.prod.arn
   launch_type     = "FARGATE"
   desired_count   = local.workspace["container_count"]
 
   # attach to the ELB
   load_balancer {
-    target_group_arn = "${aws_lb_target_group.target_group.arn}"
-    container_name   = "${aws_ecs_task_definition.prod.family}"
+    target_group_arn = aws_lb_target_group.target_group.arn
+    container_name   = aws_ecs_task_definition.prod.family
     container_port   = 8080 # Specifying the container port
   }
 
   network_configuration {
-    subnets          = [
+    subnets = [
       "${aws_default_subnet.default_subnet_a.id}",
       "${aws_default_subnet.default_subnet_b.id}",
       "${aws_default_subnet.default_subnet_c.id}",
@@ -177,7 +177,7 @@ resource "aws_security_group" "service_security_group" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}# end create service
+} # end create service
 
 
 # =============================================================================
@@ -214,15 +214,15 @@ resource "aws_lb_target_group" "target_group" {
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
-  vpc_id      = "${aws_default_vpc.default_vpc.id}"
+  vpc_id      = aws_default_vpc.default_vpc.id
 }
 resource "aws_lb_listener" "listener" {
-  load_balancer_arn = "${aws_alb.prod.arn}"
+  load_balancer_arn = aws_alb.prod.arn
   port              = "80"
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = "${aws_lb_target_group.target_group.arn}"
+    target_group_arn = aws_lb_target_group.target_group.arn
   }
-}# end create loadbalancer
+} # end create loadbalancer
 

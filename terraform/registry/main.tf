@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      source = "hashicorp/aws"
     }
   }
   backend "s3" {
@@ -17,30 +17,30 @@ provider "aws" {
 }
 
 locals {
-    env = {
-        default = {
-            env_suffix = ""
-        }
-        prod = {
-            env_suffix = "-prod"
-        }
-        test = {
-            env_suffix = "-test"
-        }
+  env = {
+    default = {
+      env_suffix = ""
     }
-    environmentvars = "${contains(keys(local.env), terraform.workspace) ? terraform.workspace : "default"}"
-    workspace       = "${merge(local.env["default"], local.env[local.environmentvars])}"
+    prod = {
+      env_suffix = "-prod"
+    }
+    test = {
+      env_suffix = "-test"
+    }
+  }
+  environmentvars = contains(keys(local.env), terraform.workspace) ? terraform.workspace : "default"
+  workspace       = merge(local.env["default"], local.env[local.environmentvars])
 
 }
 
 # Create the repo
 resource "aws_ecr_repository" "main" {
   name = "brendanbeckcom-repo${local.workspace["env_suffix"]}"
-}# end create repr
+} # end create repr
 
 output "ecr_repo" {
   description = "name of ecr repo"
-  value = aws_ecr_repository.main.name
+  value       = aws_ecr_repository.main.name
 }
 
 
