@@ -27,12 +27,6 @@ resource "aws_s3_bucket" "static_files" {
   force_destroy = true
 }
 
-#resource "aws_s3_bucket_acl" "static_files" {
-#  bucket     = aws_s3_bucket.static_files.id
-#  acl        = "public-read"
-#  depends_on = [aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership]
-#}
-
 resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership" {
   bucket = aws_s3_bucket.static_files.id
   rule {
@@ -51,11 +45,6 @@ resource "aws_s3_bucket_public_access_block" "static_files" {
   restrict_public_buckets = false
 }
 
-
-# NOTE: For some reason, I have to run terraform apply twice.
-# The first time, it creates everything except this bucket policy, giving an
-# 'api error AccessDenied: Access Denied'
-# Then running it the second time it works.
 resource "aws_s3_bucket_policy" "static-files" {
   bucket = aws_s3_bucket.static_files.id
   policy = jsonencode({
@@ -64,12 +53,10 @@ resource "aws_s3_bucket_policy" "static-files" {
       {
         Principal = "*"
         Action = [
-          #"s3:GetObject",
           "s3:*",
         ]
         Effect = "Allow"
         Resource = [
-          #"arn:aws:s3:::${resource.aws_s3_bucket.static_files.bucket}",
           "arn:aws:s3:::${resource.aws_s3_bucket.static_files.bucket}/*"
         ]
       },
@@ -77,54 +64,3 @@ resource "aws_s3_bucket_policy" "static-files" {
   })
   depends_on = [aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership]
 }
-
-
-
-
-
-
-
-
-
-#data "aws_iam_policy_document" "allow_download" {
-#  statement {
-#    actions   = ["s3:GetObject"]
-#    principals {
-#      type        = "*"
-#      identifiers = ["*"]
-#    }
-#  }
-#}
-#
-#resource "aws_s3_bucket_policy" "allow_download" {
-#  bucket = aws_s3_bucket.static_files.id
-#  policy = data.aws_iam_policy_document.allow_download.json
-#}
-
-
-
-#resource "aws_s3_bucket_ownership_controls" "static_files" {
-#  bucket = aws_s3_bucket.static_files.id
-#  rule {
-#    object_ownership = "BucketOwnerPreferred"
-#  }
-#}
-#
-#resource "aws_s3_bucket_public_access_block" "static_files" {
-#  bucket = aws_s3_bucket.static_files.id
-#
-#  block_public_acls       = false
-#  block_public_policy     = false
-#  ignore_public_acls      = false
-#  restrict_public_buckets = false
-#}
-#
-#resource "aws_s3_bucket_acl" "static_files" {
-#  depends_on = [
-#    aws_s3_bucket_ownership_controls.static_files,
-#    aws_s3_bucket_public_access_block.static_files,
-#]
-#
-#  bucket = aws_s3_bucket.static_files.id
-#  acl    = "public-read"
-#}
