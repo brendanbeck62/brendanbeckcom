@@ -69,8 +69,11 @@ The idea is that any infra changes occur in the test workspace for testing, and 
 
 I typically spin down the test workspace after I am done working on it, to reduce cost (with the exception of ECR)
 
+- `/registry` has a dev and prod, creates the ecr
+- `/s3` single instance for static files to make the docker container smaller
+
+
 ## TODO
-- [ ] Static file server (s3?)
 - [ ] Github action on PR to run terraform apply on prod workspace
 - [ ] Better tagging practice for containerized node app
 - [ ] JWT server to put put other subdomains behind a login [Devon Crawford Video](https://www.youtube.com/watch?v=SC7lLm6QAb8&ab_channel=DevonCrawford)
