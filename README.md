@@ -64,6 +64,9 @@ Layed out pretty well in the terraform.
 1. Application load balancer forwarding port 80 to it's target group
 1. DNS is configured by Cloudflare, pointing to the DNS name of the ALB.
 
+![Network diagram](https://github.com/brendanbeck62/brendanbeckcom/blob/master/docs/bbcom-architecture.jpg?raw=true)
+
+
 There are currently 2 workspaces configured, prod and test.
 The idea is that any infra changes occur in the test workspace for testing, and then once PRd into master the prod workspace can be caughtup.
 
