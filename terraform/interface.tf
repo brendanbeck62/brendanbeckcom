@@ -11,7 +11,7 @@ locals {
     }
     prod = {
       env_suffix      = "prod"
-      container_count = 3
+      container_count = 1
     }
     test = {
       env_suffix      = "test"
