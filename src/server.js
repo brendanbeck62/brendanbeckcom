@@ -7,7 +7,7 @@ const favicon = require('express-favicon');
 const fs = require('fs');
 
 // Constants
-var HOST = process.env.HOST || '127.0.0.1';
+var HOST = process.env.HOST || '0.0.0.0';
 var PORT = process.env.PORT || 8080;
 
 // App test
